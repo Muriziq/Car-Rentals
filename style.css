@@ -9,7 +9,6 @@ body {
   background-color: #000000;
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
-
 }
 header {
   height: 100vh;
@@ -89,12 +88,11 @@ header {
 }
 .header-text h1 {
   font-size: 3rem;
-  
+
   font-weight: 800;
 }
 .header-text p {
   font-size: 1rem;
-  
 }
 .search-place {
   opacity: 0;
@@ -111,7 +109,6 @@ header {
   flex-direction: row;
   align-items: center;
   gap: 2rem;
-
 }
 .search-place::before {
   content: "";
@@ -132,69 +129,66 @@ header {
   top: 0;
   left: 0;
 }
-.pickup{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0 0.5rem;
-    
-    
+.pickup {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 0.5rem;
 }
-.pickup > p{
-    font-weight: 600;
-    font-size: 0.9rem;
+.pickup > p {
+  font-weight: 600;
+  font-size: 0.9rem;
 }
-.pickup > div{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: relative;
+.pickup > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
 }
-.vertical-rule{
-    width: 1px;
-    height: 100%;
-    background-color: #ffffff;
+.vertical-rule {
+  width: 1px;
+  height: 100%;
+  background-color: #ffffff;
 }
-.pickup >div p{
-    font-size: 0.8rem;
+.pickup > div p {
+  font-size: 0.8rem;
 }
-.search-place button{
-    background-color: #E20C26;
-    padding: 1rem 1.3rem;
-    border: none;
-    border-radius: 0.5rem;
+.search-place button {
+  background-color: #e20c26;
+  padding: 1rem 1.3rem;
+  border: none;
+  border-radius: 0.5rem;
 }
-.drop-down{
-    position: absolute;
-    right: 0;
+.drop-down {
+  position: absolute;
+  right: 0;
 }
-.choose{
+.choose {
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-    justify-content: space-evenly;
+  justify-content: space-evenly;
 }
-.choose > div{
+.choose > div {
   text-align: center;
 }
-.choose h2{
+.choose h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
-.choose section{
+.choose section {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-columns: repeat(3,230px);
-  grid-auto-rows: 200px;
+  grid-template-columns: repeat(3, 250px);
+  grid-auto-rows: 220px;
   gap: 1.5rem;
-
 }
-.choose section > div{
+.choose section > div {
   border-radius: 0.6rem;
-  background-color: #0E0E10;
+  background-color: #0e0e10;
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -204,96 +198,102 @@ header {
   position: relative;
   overflow: hidden;
 }
-.choose section >div::before{
+.choose section > div::before {
   content: "";
   position: absolute;
   width: 70%;
   height: 70%;
-  background-color: #FB576B;
+  background-color: #fb576b;
   filter: blur(50px);
   -webkit-filter: blur(50px);
   right: -50%;
   top: -50%;
 }
-.choose section div > div{
-  background-color: #E20C26;
+.choose section div > div {
+  background-color: #e20c26;
   height: 40px;
   width: 47px;
   border-radius: 0.5rem;
+  padding: 0.7rem;
   display: grid;
   place-content: center;
   margin-bottom: 1rem;
-
 }
-.choose .heading{
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-.choose p{
-  font-size: 0.75em;
-  font-weight: 400;
-}
-.works{
-  height: 90vh;
-  background-color: #0E0E10;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 1fr;
-}
-.works > div{
-  height: 100%;
-  overflow: hidden;
-}
-.works > div img{
+.choose section div img{
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.works section{
+.choose .heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.choose p {
+  font-size: 0.75em;
+  font-weight: 400;
+}
+.works {
+  height: 90vh;
+  background-color: #0e0e10;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
+}
+.works > div {
+  height: 100%;
+  overflow: hidden;
+  display: grid;
+  place-content: center;
+}
+.works > div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.works section {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding-left:  3rem;
+  padding-left: 3rem;
   align-items: start;
 }
-.works section h2{
+.works section h2 {
   font-size: 1.8rem;
   font-weight: 600;
 }
-.numbers{
+.numbers {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #18181B;
+  background-color: #18181b;
   display: grid;
   place-content: center;
   font-family: inherit;
   font-weight: 500;
   position: relative;
 }
-.works section > div{
+.works section > div {
   display: flex;
   flex-direction: row;
-  gap: 1rem ;
-  
+  gap: 1rem;
 }
-.works section > div > div:nth-child(2){
+.works section > div > div:nth-child(2) {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.bold{
+.bold {
   font-size: 1.2rem;
   font-weight: 600;
 }
-.works section button{
+.works section button {
   padding: 0.7rem 1rem;
   border: none;
   border-radius: 1.3rem;
-  background-color: #E20C26;
+  background-color: #e20c26;
   color: inherit;
 }
-.vertical{
+.vertical {
   width: 1px;
   height: 5rem;
   background-color: #ffffff;
@@ -302,7 +302,7 @@ header {
   left: 50%;
   transform: translateX(-50%);
 }
-.rent{
+.rent {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -316,14 +316,13 @@ header {
   flex-direction: column;
   gap: 2rem;
 }
-.categories{
+.categories {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
 }
-.categories > div{
+.categories > div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -332,7 +331,7 @@ header {
   border-radius: 2rem;
   padding: 0.5rem 1rem;
 }
-.categories  button{
+.categories button {
   padding: 0.5rem 1rem;
   border-radius: 1rem;
   border: none;
@@ -342,122 +341,119 @@ header {
   color: inherit;
   transition: all 0.5s;
 }
-.categories :is(button:hover,button:active){
-  background-color: #0E0E10;
+.categories :is(button:hover, button:active) {
+  background-color: #0e0e10;
 }
-.buy{
+.buy {
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
 }
-.buy section{
-    width: 300px;
+.buy section {
+  width: 300px;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-
 }
-.buy  section > div:first-child{
+.buy section > div:first-child {
   height: 230px;
   border-radius: 1rem;
   overflow: hidden;
 }
-.buy section > div:first-child img{
+.buy section > div:first-child img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.buydiv{
+.buydiv {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
 }
-.shape{
+.shape {
   display: flex;
   flex-direction: row;
   gap: 0.3rem;
 }
-.buydiv > p{
+.buydiv > p {
   font-weight: 600;
 }
-.atributes{
+.atributes {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.8rem;
   font-size: 0.8rem;
 }
-.atributes > div{
+.atributes > div {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
 }
-.buydiv > div:last-child{
+.buydiv > div:last-child {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   font-weight: 500;
 }
-.buydiv > div:last-child button{
+.buydiv > div:last-child button {
   padding: 0.5rem 0.7rem;
   border: none;
-  background-color: #E20C26;
+  background-color: #e20c26;
   border-radius: 1rem;
   color: inherit;
   font-family: inherit;
 }
-.ofssarticle{
+.ofssarticle {
   height: 100vh;
   display: flex;
   flex-direction: column;
-    overflow: hidden;
+  overflow: hidden;
 }
-.offs{
+.offs {
   position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   padding: 2rem;
-  background-color: #0E0E10;
-
-
+  background-color: #0e0e10;
 }
-.offs::before{
+.offs::before {
   position: absolute;
   content: "";
   width: 20vw;
   height: 20vw;
   border-radius: 50%;
-  background-color: #FB576B;
+  background-color: #fb576b;
   filter: blur(50px);
   top: -18vw;
 }
-.offs div{
+.offs div {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-items: center;
 }
-.offs h2{
+.offs h2 {
   font-weight: 700;
   font-size: 2.5rem;
 }
-.offs p{
+.offs p {
   font-size: 0.8rem;
 }
-.ofssarticle > div:last-child{
+.ofssarticle > section {
   height: 100%;
   overflow: hidden;
   position: relative;
 }
-.ofssarticle > div:last-child img{
+.ofssarticle > section img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
-.toggle-row{
+.toggle-row {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
@@ -466,38 +462,39 @@ header {
   left: 50%;
   transform: translateX(-50%);
 }
-.toggle-row div{
+.toggle-row div {
   height: 15px;
   width: 15px;
   background-color: #ffffff;
   border-radius: 50%;
 }
-.customer-comment{
+.customer-comment {
   height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  background-image: linear-gradient(#000000 30%, #0e0e10);
 }
-.customer-comment h2{
+.customer-comment h2 {
   font-weight: 600;
   font-size: 2rem;
 }
-.customer-comment > p{
+.customer-comment > p {
   font-size: 0.8rem;
   text-align: center;
 }
-.customer-comment > section{
+.customer-comment > section {
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
 }
-.comments{
+.comments {
   width: 280px;
   height: 250px;
   padding: 0 1rem;
-  background-color: #0E0E10;
+  background-color: #0e0e10;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -506,9 +503,9 @@ header {
   z-index: 1;
   overflow: hidden;
 }
-.comments::before{
+.comments::before {
   content: "";
-  background-color: #18181B;
+  background-color: #18181b;
   position: absolute;
   height: 150px;
   width: 150px;
@@ -516,11 +513,11 @@ header {
   z-index: -1;
   bottom: -50px;
   left: -50px;
-  transform: rotate(54.66deg)
+  transform: rotate(54.66deg);
 }
-.comments::after{
+.comments::after {
   content: "";
-  background-color: #18181B;
+  background-color: #18181b;
   position: absolute;
   height: 150px;
   width: 150px;
@@ -528,7 +525,7 @@ header {
   z-index: -1;
   top: -50px;
   right: -50px;
-  transform: rotate(-54.66deg)
+  transform: rotate(-54.66deg);
 }
 .comments > div:first-child {
   display: flex;
@@ -536,33 +533,234 @@ header {
   gap: 1rem;
   align-items: center;
 }
-.comments > div:first-child  > div:first-child{
+.comments > div:first-child > div:first-child {
   height: 40px;
   width: 40px;
   border-radius: 50%;
   overflow: hidden;
 }
-.comments > div:first-child  > div:first-child img{
+.comments > div:first-child > div:first-child img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.comments > div:first-child > div:last-child{
+.comments > div:first-child > div:last-child {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
 }
-.comments > div:first-child > div:last-child > p:first-child{
+.comments > div:first-child > div:last-child > p:first-child {
   font-weight: 500;
 }
-.comments > div:first-child > div:last-child > p:last-child{
-  color: #62646C;
+.comments > div:first-child > div:last-child > p:last-child {
+  color: #62646c;
   font-weight: 400;
 }
-.comments > p{
+.comments > p {
   font-size: 0.8rem;
   line-height: 1.3rem;
 }
-.comments > div:nth-child(2) img{
+.comments > div:nth-child(2) img {
   height: 15px;
 }
+.forms {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2rem 3rem;
+  background-color: #0e0e10;
+}
+.forms > h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+.forms > p {
+  font-size: 0.8rem;
+  text-align: center;
+}
+.forms > section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+.forms section > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+}
+.forms section > div:first-child h2 {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.forms section > div:first-child p {
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+}
+.forms section > div:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.3rem;
+}
+.forms section > div:last-child > div:first-child {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.3rem;
+}
+.forms section > div:last-child > div:nth-child(2) {
+  width: 100%;
+}
+.bold {
+  font-size: 0.9rem;
+}
+.forms section input {
+  width: 100%;
+  padding: 0.7rem 0;
+  border: none;
+  border-bottom: 1px solid #2f2f37;
+  outline: none;
+  background-color: transparent;
+}
+.forms section button {
+  padding: 0.7rem 1rem;
+  border: none;
+  background-color: #e20c26;
+  border-radius: 1.3rem;
+  color: inherit;
+  margin-top: 1rem;
+}
+.foot > section:first-child {
+  display: flex;
+  flex-direction: row;
+  padding: 3rem;
+  border-top: 1px solid #2f2f37;
+  border-bottom: 1px solid #2f2f37;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #070708;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.foot > section:first-child::before {
+  content: "";
+  background-image: url("images/Abstract Design (1).png");
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  top: 0;
+  left: -20px;
+  z-index: -1;
+}
+.foot > section:first-child::after {
+  content: "";
+  background-image: url("images/Abstract Design.png");
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  top: 0;
+  right: 30px;
+  z-index: -1;
+}
+.foot > section:first-child div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.foot > section:first-child h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+.foot > section:first-child p {
+  font-size: 0.8rem;
+}
+.foot > section:first-child button {
+  padding: 0.7rem 1rem;
+  border: none;
+  background-color: #e20c26;
+  border-radius: 1.3rem;
+  color: inherit;
+}
+.foot2 {
+  display: flex;
+  flex-direction: row;
+  padding: 3rem;
+  justify-content: space-between;
+  background-color: #0e0e10;
+}
+.foot2 > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: start;
+}
+.foot2 > div:first-child > div:first-child {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: bold;
+  gap: 0.2rem;
+}
+.foot2 > div:first-child > div:last-child {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  border: 1px solid #2f2f37;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+}
+.foot2 > div:first-child input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+.foot2 nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.foot2 nav a {
+  color: inherit;
+  font-family: inherit;
+  text-decoration: none;
+}
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+footer {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem 3rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a1a;
+}
+footer div {
+  display: flex;
+  flex-direction: row;
+  gap: 0.7rem;
+}
+footer div button {
+  height: 25px;
+  width: 25px;
+  background-color: #141414;
+  border-radius: 50%;
+  border: none;
+  padding: 0.3rem;
+  box-sizing: content-box;
+  display: grid;
+  place-content: center;
+}
+footer img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
