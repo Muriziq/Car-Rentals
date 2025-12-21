@@ -12,7 +12,7 @@ function header() {
     { y: 50, opacity: 0 },
     { y: 0, opacity: 1 }
   );
-  const menuBar = document.querySelector(".menu-bar");
+  const menuBar = document.querySelector("header");
   headerTimeline.to(menuBar, { opacity: 1 }, "-=0.8");
   headerTimeline.fromTo(
     menuBar.querySelector("div"),
@@ -273,3 +273,24 @@ works();
 rent();
 offsArticle();
 customerComment();
+
+document.querySelectorAll('header a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href'))
+      .scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+const mobileMenu = document.querySelector("header nav");
+
+document.querySelector(".menu-btn").addEventListener("click", () => {
+    mobileMenu.classList.toggle("active")
+    const links = mobileMenu.querySelectorAll("a")
+    if(mobileMenu.classList.contains("active")){
+        gsap.fromTo(links,{opacity:0,y:20},{opacity:1,y:0,stagger:0.1})
+    }else{
+        gsap.fromTo(links,{opacity:1,y:0},{opacity:0,y:20,stagger:0.1})
+    }
+});
+

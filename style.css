@@ -6,16 +6,13 @@
 }
 body {
   max-width: 100vw;
+  overflow-x: hidden;
   background-color: #000000;
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
 }
+
 header {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-.menu-bar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -23,8 +20,17 @@ header {
   padding: 1rem 2rem;
   height: 60px;
   opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  border-radius: 0 0 2rem 2rem;
+  background-color: #000000;
+  backdrop-filter: blur(30px);
 }
-.menu-bar div {
+
+header div {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -32,27 +38,39 @@ header {
   font-weight: bold;
   gap: 0.2rem;
 }
-.menu-bar nav {
-  width: 30%;
+header > div:last-of-type{
+  position: relative;
+}
+header nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
 }
-.menu-bar nav a {
+header nav a {
   text-decoration: none;
   color: #ffffff;
   font-size: 0.8rem;
   transition: all 0.3s;
 }
+.menu-btn {
+    display: none;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    background: transparent;
+    border: 1px solid #D4D4D4;
+    cursor: pointer;
+    text-wrap: nowrap;
+}
 
-.menu-bar nav :is(a:active, a:hover) {
+header nav :is(a:active, a:hover) {
   color: #e20c26;
 }
-.menu-bar img {
+header img {
   height: 100%;
   width: auto;
 }
-.menu-bar button {
+header button {
   padding: 0.7rem 1rem;
   border: none;
   background-color: #e20c26;
@@ -61,7 +79,7 @@ header {
 }
 .background {
   padding: 1rem;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
   position: relative;
   opacity: 0;
@@ -140,11 +158,22 @@ header {
   font-weight: 600;
   font-size: 0.9rem;
 }
-.pickup > div {
+.pickup > div  div {
   display: flex;
   flex-direction: row;
   align-items: center;
-  position: relative;
+  gap: 0.5rem;
+}
+.pickup > div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+.pickup > div > img{
+  height: 12px;
+  width: auto;
 }
 .vertical-rule {
   width: 1px;
@@ -160,10 +189,7 @@ header {
   border: none;
   border-radius: 0.5rem;
 }
-.drop-down {
-  position: absolute;
-  right: 0;
-}
+
 .choose {
   height: 100vh;
   display: flex;
@@ -188,6 +214,11 @@ header {
 }
 .choose section > div {
   border-radius: 0.6rem;
+  max-width: 250px;
+  max-height: 220px;
+  width:  250px;
+  height: 220px;
+
   background-color: #0e0e10;
   display: flex;
   flex-direction: column;
@@ -264,6 +295,8 @@ header {
 .numbers {
   width: 50px;
   height: 50px;
+  min-width: 50px;
+  min-height: 50px;
   border-radius: 50%;
   background-color: #18181b;
   display: grid;
@@ -493,6 +526,8 @@ header {
 .comments {
   width: 280px;
   height: 250px;
+  min-height: 250px;
+  min-width: 280px;
   padding: 0 1rem;
   background-color: #0e0e10;
   border-radius: 1rem;
@@ -711,7 +746,7 @@ header {
   flex-direction: row;
   gap: 0.5rem;
   border: 1px solid #2f2f37;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 0.3rem;
 }
 .foot2 > div:first-child input {
@@ -764,3 +799,193 @@ footer img {
   object-fit: cover;
 }
 
+@media (max-width: 575.98px){
+.menu-btn{
+  display: block;
+}
+header{
+  padding: 1rem;
+}
+header nav{
+  display: none;
+  position: absolute;
+ bottom: -10rem;
+ flex-direction: column;
+ left: 50%;
+ transform: translateX(-50%);
+}
+        header .active {
+        display: flex;
+    }
+    .background-image{
+      position: absolute;
+      border-radius: 0;
+      top: 0;
+      left: 0;
+
+    }
+    .background{
+      height: auto;
+      padding: 4rem 1rem 2rem;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .header-text{
+      position: static;
+      align-items: center;
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+
+    }
+    .header-text h1{
+      font-size: 2.5rem;
+    }
+    .background br{
+      display: none;
+    }
+    .search-place{
+      position: static;
+      flex-direction: column;
+      height: auto;
+      transform: translateX(0);
+      width: 90%;
+      gap: 1rem;
+      align-items: center;
+      text-align: center;
+    }
+    .vertical-rule{
+     height: 2px;
+     width: 100%;
+    }
+    .choose{
+      height: auto;
+      padding: 2rem 1rem;
+      gap: 1.5rem;
+    }
+    .choose section{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      }
+      .works,.ofssarticle,.customer-comment{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+      }
+      .works section{
+        padding: 2rem 1rem;
+        gap: 1rem;
+        padding-left: 1rem;
+      }
+      .works section h2{
+        text-align: center;
+        width: 100%;
+      }
+      .rent{
+        padding: 2rem 1rem;
+      }
+      .rent > div{
+        gap: 1rem;
+      }
+      .categories{
+        gap: 1rem;
+      }
+      .categories > div {
+        flex: 1;
+        overflow-x: scroll;
+        text-wrap: nowrap;
+        width: 100%;
+      }
+      .buy{
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+      }
+      .offs{
+        padding: 2rem 1rem;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      .offs div{
+        text-align: center;
+      }
+      .offs h2{
+        font-size: 2.2rem;
+      }
+      .ofssarticle > section{
+        height: 60vw;
+      }
+      .customer-comment{
+        padding: 2rem 1rem;
+        gap: 1rem;
+      }
+      .customer-comment h2 , .customer-comment > p{
+        text-align: center;
+      }
+      .customer-comment br,.forms br{
+        display: none;
+      }
+      .customer-comment > section{
+        margin-top: 1rem;
+        overflow-x: scroll;
+        width: 100%;
+      }
+      .forms{
+        height: auto;
+        padding: 2rem 1rem;
+        gap: 1.5rem;
+      }
+      .forms > h2,.forms > p,.forms section > div:first-child h2,.forms section > div:first-child p{
+        text-align: center;
+        width: 100%;
+      }
+      
+      .forms > section{
+        display: flex;
+        flex-direction: column;
+      }
+      .foot > section:first-child{
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+      }
+      .foot2{
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        padding: 2rem 1rem;
+      }
+      .foot2 > div:first-child{
+        gap: 0.5rem;
+        align-items: start;
+        width: 100%;
+      }
+      .links{
+        gap: 1rem;
+      }
+      .foot2 > div:first-child > div:last-child {
+        width: auto;
+      }
+      footer{
+        padding: 1rem;
+        gap: 1rem;
+        flex-direction: column;
+
+      }
+      footer div{
+        flex-wrap: wrap;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+      }
+      
+
+
+}
