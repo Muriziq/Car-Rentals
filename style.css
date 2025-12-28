@@ -382,14 +382,22 @@ header button {
   flex-direction: row;
   gap: 1.5rem;
 }
+.buy > a{
+      color: #ffffff;
+      text-decoration: none;
+}
 .buy section {
   width: 300px;
+  min-width: 300px;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 .buy section > div:first-child {
   height: 230px;
+  min-height: 230px;
+  max-height: 230px;
   border-radius: 1rem;
   overflow: hidden;
 }

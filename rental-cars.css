@@ -11,11 +11,36 @@ body {
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
 }
+header{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+header > img{
+    height: 45px;
+    width: auto;
+}
+header a img{
+    height: 30px;
+}
+header a {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
 main{
     display: flex;
     flex-direction: row;
     gap: 4rem;
-    padding: 4rem;
+    padding: 1rem 4rem;
     align-items: center;
 }
 .first-sec{
@@ -39,7 +64,7 @@ main{
 }
 .first-sec > div:first-of-type button{
     position: absolute;
-    background-color: #0e0e10;
+    background-color: #000000;
     z-index: 3;
     top: 50%;
     transform: translateY(-50%);
@@ -64,8 +89,15 @@ main{
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
-    height: 100px;
+    height: 50px;
     overflow-x: auto;
+    overflow-y: hidden;
+    justify-content: center;
+}
+.first-sec > div:last-of-type img{
+    height: 100%;
+    width: auto;
+    object-fit: cover;
 }
 
 .second-sec{
@@ -118,6 +150,7 @@ main{
     align-items: end;
     justify-content: end;
     margin-top: 0.5rem;
+    width: 100%;
 }
 .second-sec button{
       padding: 0.7rem 1rem;
@@ -125,4 +158,227 @@ main{
   background-color: #e20c26;
   color: #ffffff;
   border-radius: 1rem;
+}
+article{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+article h1{
+    font-size: 2.5rem;
+}
+.buy {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  width: 90%;
+  justify-content: center;
+  align-items: start;
+
+}
+.buy > a{
+      color: #ffffff;
+      text-decoration: none;
+}
+.buy section {
+  width: 300px;
+  max-width: 300px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.buy section > div:first-child {
+  height: 230px;
+  max-height: 230px;
+  min-height: 230px;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.buy section > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.buydiv {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.shape {
+  display: flex;
+  flex-direction: row;
+  gap: 0.3rem;
+}
+.buydiv > p {
+  font-weight: 600;
+}
+.atributes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  font-size: 0.8rem;
+}
+.atributes > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+.buydiv > div:last-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+}
+.buydiv > div:last-child button {
+  padding: 0.5rem 0.7rem;
+  border: none;
+  background-color: #e20c26;
+  border-radius: 1rem;
+  color: inherit;
+  font-family: inherit;
+}
+
+.foot2 {
+  display: flex;
+  flex-direction: row;
+  padding: 3rem;
+  justify-content: space-between;
+  background-color: #0e0e10;
+}
+.foot2 > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: start;
+}
+.foot2 > div:first-child > div:first-child {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: bold;
+  gap: 0.2rem;
+}
+.foot2 > div:first-child > div:last-child {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  border: 1px solid #2f2f37;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+}
+.foot2 > div:first-child input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+.foot2 nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.foot2 nav a {
+  color: inherit;
+  font-family: inherit;
+  text-decoration: none;
+}
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+footer {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem 3rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a1a;
+}
+footer div {
+  display: flex;
+  flex-direction: row;
+  gap: 0.7rem;
+}
+footer div button {
+  height: 25px;
+  width: 25px;
+  background-color: #141414;
+  border-radius: 50%;
+  border: none;
+  padding: 0.3rem;
+  box-sizing: content-box;
+  display: grid;
+  place-content: center;
+}
+footer img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 575.98px){
+    main{
+        flex-direction: column;
+        padding: 1rem;
+        gap: 2rem;
+    }
+    .first-sec{
+        width: 100%;
+        padding: 0.7rem;
+    }
+    .first-sec > div:first-of-type button{
+        height: 50px;
+    }
+    .second-sec{
+        align-items: center;
+        text-align: center;
+    }
+    .second-sec ul{
+        width: 100%;
+        text-align: start;
+    }
+          .buy{
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+      }
+           .foot2{
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        padding: 2rem 1rem;
+      }
+      .foot2 > div:first-child{
+        gap: 0.5rem;
+        align-items: start;
+        width: 100%;
+      }
+      .links{
+        gap: 1rem;
+      }
+      .foot2 > div:first-child > div:last-child {
+        width: auto;
+      }
+      footer{
+        padding: 1rem;
+        gap: 1rem;
+        flex-direction: column;
+
+      }
+      article > h1{
+        text-align: center;
+      }
+      footer div{
+        flex-wrap: wrap;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+      }
 }
