@@ -196,7 +196,7 @@ header button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  justify-content: space-evenly;
+  gap: 2rem;
 }
 .choose > div {
   text-align: center;
@@ -269,6 +269,7 @@ header button {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: 1fr;
+  align-items: center;
 }
 .works > div {
   height: 100%;
@@ -284,10 +285,15 @@ header button {
 .works section {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  gap: 2.5rem;
+
   padding-left: 3rem;
+  padding-right: 1rem;
   align-items: start;
+    position: relative;
+   
 }
+
 .works section h2 {
   font-size: 1.8rem;
   font-weight: 600;
@@ -298,19 +304,68 @@ header button {
   min-width: 50px;
   min-height: 50px;
   border-radius: 50%;
-  background-color: #18181b;
-  display: grid;
-  place-content: center;
+
+
   font-family: inherit;
-  font-weight: 500;
   position: relative;
+  font-weight: 500;
+  z-index: 5;
 }
-.works section > div {
+.numbers div{
+  background-color: #18181b;
+  height: 100%;
+  width: 100%;
+    border-radius: 50%;
+      display: grid;
+  place-content: center;
+}
+.works section > div > div{
   display: flex;
   flex-direction: row;
   gap: 1rem;
+
 }
-.works section > div > div:nth-child(2) {
+.works section > div{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  z-index: 4;
+}
+.works section > div::before{
+  position: absolute;
+  width: 3px;
+  left: 22.5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #ffffff;
+  content: "";
+  height: 95% ;
+  z-index: -1;
+}
+.numbers::before,.numbers.second::after{
+  width: 100%;
+  height: 10px;
+  content: "";
+  position: absolute;
+  background-color: #0e0e10;
+  z-index: -1;
+    top: 50%;
+  transform: translateY(-50%);
+
+}
+.numbers::before{
+  top: 50px;
+}
+.numbers.second::after{
+  top: 0;
+}
+
+.numbers.last::before{
+  top: 0;
+}
+
+.works section > div > div > div:nth-child(2) {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -325,29 +380,23 @@ header button {
   border-radius: 1.3rem;
   background-color: #e20c26;
   color: inherit;
+
 }
-.vertical {
-  width: 1px;
-  height: 5rem;
-  background-color: #ffffff;
-  position: absolute;
-  top: 117%;
-  left: 50%;
-  transform: translateX(-50%);
-}
+
+
 .rent {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   padding: 5rem 3rem;
-  gap: 3rem;
+  gap: 2rem;
 }
 .rent > div {
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 .categories {
   width: 100%;
@@ -360,7 +409,7 @@ header button {
   flex-direction: row;
   justify-content: space-between;
   background-color: #171717;
-  width: 50%;
+  width: auto;
   border-radius: 2rem;
   padding: 0.5rem 1rem;
 }
@@ -381,10 +430,17 @@ header button {
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
+  overflow-x: auto;
+  max-width: 100%;
+  width: auto;
+  min-width: 0;
 }
-.buy > a{
+.buy  a{
       color: #ffffff;
       text-decoration: none;
+      height: auto;
+      width: auto;
+        margin-inline: auto;
 }
 .buy section {
   width: 300px;
@@ -393,6 +449,7 @@ header button {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+
 }
 .buy section > div:first-child {
   height: 230px;
@@ -483,14 +540,15 @@ header button {
 .offs p {
   font-size: 0.8rem;
 }
-.ofssarticle > section {
+.ofssarticle > section{
   height: 100%;
+  width: 100%;
   overflow: hidden;
   position: relative;
 }
 .ofssarticle > section img {
   width: 100%;
-  height: 100%;
+  height:100%;
   object-fit: cover;
   object-position: center;
 }
@@ -530,6 +588,9 @@ header button {
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
+  overflow-x: auto;
+  max-width: 100%;width: auto;
+  min-width: 0;
 }
 .comments {
   width: 280px;
@@ -545,6 +606,7 @@ header button {
   position: relative;
   z-index: 1;
   overflow: hidden;
+  margin-inline: auto ;
 }
 .comments::before {
   content: "";
@@ -610,7 +672,8 @@ header button {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 2rem;
   align-items: center;
   padding: 2rem 3rem;
   background-color: #0e0e10;
@@ -837,14 +900,14 @@ footer img {
   gap: 1.5rem;
   border-radius: 2rem 0 2rem 0;
 }
-.login-page > section::-webkit-scrollbar,.rental-car .buy::-webkit-scrollbar{
+.login-page > section::-webkit-scrollbar,.buy::-webkit-scrollbar{
   width: 5px;
   height: 5px;
 }
-.login-page > section::-webkit-scrollbar-thumb,.rental-car .buy::-webkit-scrollbar-thumb{
+.login-page > section::-webkit-scrollbar-thumb,.rental-car .buy > div::-webkit-scrollbar-thumb,.buy::-webkit-scrollbar-thumb{
   background: #62646c;
 }
-.login-page > section::-webkit-scrollbar-track .rental-car .buy::-webkit-scrollbar-track{
+.login-page > section::-webkit-scrollbar-track ,.rental-car .buy > div::-webkit-scrollbar-track, .buy::-webkit-scrollbar-track{
   background: transparent;
 }
 .signup > div {
@@ -961,6 +1024,7 @@ color: #ffffff;
   border-radius: 2rem 0 2rem 0;
   height: 90vh;
   max-height: 90vh;
+  width: 80vw;
   align-items: center;
 }
 .rental2{
@@ -995,17 +1059,35 @@ color: #ffffff;
   height: 20px;
 }
 .rental-car .buy{
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
   padding-left: 1.5rem;
   padding-right: 0.5rem;
   height: 100%;
   min-height: 0;
   overflow-y: auto;
+  flex: 1;
 }
-.rental-car .buy > section{
+.rental-car .buy > div {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 1rem;
+  min-height: fit-content;
+  padding-bottom: 1rem;
+
+}
+
+.rental-car .buy > div::-webkit-scrollbar{
+  height: 5px;
+}
+.rental-car .buy  section{
  width: 210px;
+ min-width: 210px;
+ max-width: 210px;
 }
 .rental-car .shape img{
   height: 15px;
@@ -1018,8 +1100,10 @@ color: #ffffff;
 }
 .rental-car .buy section > div:first-child{
   height: 161px;
+  min-height: 161px;
+  max-height: 161px;
 }
-@media (max-width: 575.98px){
+@media (max-width:767px){
 .menu-btn{
   display: block;
 }
@@ -1063,13 +1147,13 @@ header nav{
       z-index: 7;
 
     }
-    .header-text h1{
+        .header-text h1{
       font-size: 2.5rem;
     }
-    .background br{
+        .background br{
       display: none;
     }
-    .search-place{
+        .search-place{
       position: static;
       flex-direction: column;
       height: auto;
@@ -1083,7 +1167,7 @@ header nav{
      height: 2px;
      width: 100%;
     }
-    .choose{
+        .choose{
       height: auto;
       padding: 2rem 1rem;
       gap: 1.5rem;
@@ -1095,7 +1179,7 @@ header nav{
       align-items: center;
       justify-content: center;
       }
-      .works,.ofssarticle,.customer-comment{
+            .works,.ofssarticle,.customer-comment{
         height: auto;
         display: flex;
         flex-direction: column;
@@ -1124,11 +1208,8 @@ header nav{
         text-wrap: nowrap;
         width: 100%;
       }
-      .buy{
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-      }
+
+
       .offs{
         padding: 2rem 1rem;
         justify-content: space-between;
@@ -1140,8 +1221,11 @@ header nav{
       .offs h2{
         font-size: 2.2rem;
       }
+      .ofssarticle{
+        height: auto
+      }
       .ofssarticle > section{
-        height: 60vw;
+        height: 300px ;
       }
       .customer-comment{
         padding: 2rem 1rem;
@@ -1155,7 +1239,6 @@ header nav{
       }
       .customer-comment > section{
         margin-top: 1rem;
-        overflow-x: scroll;
         width: 100%;
       }
       .forms{
@@ -1240,8 +1323,143 @@ header nav{
 }
 .rental-car .buy{
   padding: 1rem;
-  overflow: auto;
+  flex-direction: column;
+  flex-wrap: nowrap;
   justify-content: start;
-
 }
+}
+@media (min-width:500px) and (max-width:767px){
+  .header-text h1{
+    width: 80%;
+  }
+  .works section{
+    align-items: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+      .background-image{
+      position: absolute;
+      border-radius: 0;
+      top: 0;
+      left: 0;
+
+    }
+    .background{
+      height: auto;
+      padding: 6rem 2rem 2rem;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .header-text{
+      position: static;
+      width: 100%;
+      
+      z-index: 7;
+
+    }
+        .search-place{
+      position: static;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      height: auto;
+      transform: translateX(0);
+      width: 100%;
+      gap: 1rem;
+      place-content: center;
+      text-align: center;
+    }
+    .vertical-rule{
+      position: absolute;
+      height: 90%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+          .choose section{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      }
+      .choose{
+        padding: 2rem;
+        gap: 1.5rem;
+                        display: flex;
+        flex-direction: column;
+      }
+       .choose,.works,.ofssarticle,.customer-comment{
+        height: auto;
+       }
+       .customer-comment{
+        padding: 2rem 1rem;
+       }
+       .ofssarticle > section{
+        height: 400px;
+       }
+
+      
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+     .background-image{
+      position: absolute;
+      border-radius: 0;
+      top: 0;
+      left: 0;
+
+    }
+    .background{
+      height: auto;
+      padding: 6rem 2rem 2rem;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 150px;
+    }
+    .header-text{
+      position: static;
+      width: 100%;
+      
+      z-index: 7;
+
+    }
+        .search-place{
+      position: static;
+      height: auto;
+      transform: translateX(0);
+      width: 100%;
+      gap: 1rem;
+      place-content: center;
+      text-align: center;
+    }
+
+          .choose section{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      }
+      .choose{
+        padding: 2rem;
+        gap: 1.5rem;
+                        display: flex;
+        flex-direction: column;
+      }
+       .choose,.works,.ofssarticle,.customer-comment{
+        height: auto;
+       }
+       .customer-comment{
+        padding: 2rem 1rem;
+       }
+       .ofssarticle > section{
+        height: 400px;
+       }
 }

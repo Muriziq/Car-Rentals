@@ -24,7 +24,7 @@ header{
 }
 header > img{
     height: 45px;
-    width: auto;
+    width: auto; 
 }
 header a img{
     height: 30px;

@@ -1,6 +1,33 @@
 gsap.registerPlugin(ScrollTrigger);
 
 
+
+
+const toggleImages = [
+  "e20722ac82f89475d007724640dcfb61999ddfea.jpg",
+  "Lamborghini-Revuelto-Front-Centre.jpg",
+  "Ps-Blog-23.jpg"
+];
+
+const toggleImage = document.querySelector(".ofssarticle > section img");
+
+let toggleStart = 0;
+toggleImage.src = `images/${toggleImages[toggleStart]}`;
+setInterval(() => {
+  toggleStart = (toggleStart + 1) % toggleImages.length;
+  toggleImage.src = `images/${toggleImages[toggleStart]}`;
+document.querySelectorAll(".toggle-row  div").forEach((toggle,index)=>{
+  if(index === toggleStart){
+    toggle.style.opacity = 0.5
+  }else{
+    toggle.style.opacity = 1
+  }
+  console.log(toggle)
+})
+}, 2000);
+
+
+
 document.querySelectorAll('header a').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
