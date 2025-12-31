@@ -93,6 +93,8 @@ main{
     overflow-x: auto;
     overflow-y: hidden;
     justify-content: center;
+    width: 100%;
+    min-width: 0;
 }
 .first-sec > div:last-of-type img{
     height: 100%;
@@ -323,16 +325,13 @@ footer img {
   object-fit: cover;
 }
 
-@media (max-width: 575.98px){
+@media (max-width: 768px){
     main{
         flex-direction: column;
         padding: 1rem;
         gap: 2rem;
     }
-    .first-sec{
-        width: 100%;
-        padding: 0.7rem;
-    }
+
     .first-sec > div:first-of-type button{
         height: 50px;
     }
@@ -340,10 +339,7 @@ footer img {
         align-items: center;
         text-align: center;
     }
-    .second-sec ul{
-        width: 100%;
-        text-align: start;
-    }
+
           .buy{
         flex-wrap: wrap;
         align-items: center;
@@ -381,4 +377,24 @@ footer img {
         align-items: center;
         justify-content: center;
       }
+}
+@media (max-width: 575.99px){
+    .first-sec{
+        width: 100%;
+        padding: 1rem;
+    }
+        .second-sec ul{
+        width: 100%;
+        text-align: start;
+    }
+}
+@media (min-width:576px) and (max-width:767px){
+    .first-sec{
+        width: 80%;
+        padding: 1rem;
+    }
+        .second-sec ul{
+        width: 70vw;
+        text-align: start;
+    }
 }

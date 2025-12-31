@@ -1402,6 +1402,13 @@ header nav{
        .ofssarticle > section{
         height: 400px;
        }
+             .login-page > section{
+        width: 70vw;
+        padding: 2rem 1rem;
+      }
+      .rental-car > section{
+        width: 90vw;
+      }
 
       
 }
@@ -1462,4 +1469,10 @@ header nav{
        .ofssarticle > section{
         height: 400px;
        }
+             .login-page > section{
+        width: 60vw;
+      }
+      .rental-car > section{
+        width: 85vw;
+      }
 }
