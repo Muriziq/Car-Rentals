@@ -286,7 +286,7 @@ header button {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-
+  
   padding-left: 3rem;
   padding-right: 1rem;
   align-items: start;
@@ -1113,10 +1113,20 @@ header{
 header nav{
   display: none;
   position: absolute;
- bottom: -10rem;
+ bottom: -15rem;
  flex-direction: column;
  left: 50%;
  transform: translateX(-50%);
+ background-color: #17171a;
+ padding: 1rem;
+ width: 60vw;
+}
+header nav a{
+  border-bottom: 1px solid #ffffff;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 0.5rem;
+
 }
         header .active {
         display: flex;

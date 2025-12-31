@@ -99,6 +99,7 @@ main{
 .first-sec > div:last-of-type img{
     height: 100%;
     width: auto;
+    min-width: auto;
     object-fit: cover;
 }
 
