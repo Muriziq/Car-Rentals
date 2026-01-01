@@ -1,428 +1,608 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Set character encoding and viewport for responsiveness -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title -->
     <title>Document</title>
+    
+    <!-- Link external CSS -->
     <link rel="stylesheet" href="rental-cars.css">
+    
+    <!-- Include GSAP library for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
+
+  <!-- ==========================
+       Header Section
+       Contains logo, icon, and brand name
+       ========================== -->
   <header>
     <a href="index.html"><img src="images/Group 1171275011.svg" alt=""></a>
-          <img src="images/hugeicons_steering.png" alt="" />
-          <p>AutoRent</p>
+    <img src="images/hugeicons_steering.png" alt="" />
+    <p>AutoRent</p>
   </header>
-    <main>
-        <section class="first-sec">
+
+  <!-- ==========================
+       Main Content
+       ========================== -->
+  <main>
+    <!-- First Section: Image gallery with navigation arrows -->
+    <section class="first-sec">
+      <div>
+        <!-- Main background image -->
+        <img src="images/ec67ae80d6c44367a653b67a570c96d326bda09b.jpg" alt="">
+        <!-- Left and right navigation buttons -->
+        <button><img src="images/Polygon 6.svg" alt=""></button>
+        <button><img src="images/Polygon 6.svg" alt=""></button>
+      </div>
+      <div>
+        <!-- Sub-images thumbnails for gallery -->
+        <div><img src="images/ec67ae80d6c44367a653b67a570c96d326bda09b.jpg" alt=""></div>
+        <div><img src="images/0b068e72243c937eacf15570bb493f42848871eb.jpg" alt=""></div>
+        <div><img src="images/ec67ae80d6c44367a653b67a570c96d326bda09b.jpg" alt=""></div>
+        <div><img src="images/Ps-Blog-23.jpg" alt=""></div>
+      </div>
+    </section>
+
+    <!-- Second Section: Car details -->
+    <section class="second-sec">
+      <small>Toyota</small>
+      <h1>Toyota Corolla</h1>
+
+      <!-- Rating stars -->
+      <div class="shape">
+        <img src="images/Shape.png" alt="" />
+        <img src="images/Shape.png" alt="" />
+        <img src="images/Shape.png" alt="" />
+        <img src="images/Shape.png" alt="" />
+        <img src="images/Shape.png" alt="" />
+        <img src="images/Shape.png" alt="" />
+      </div>
+
+      <!-- Car attributes -->
+      <ul>
+        <li><strong>Car Type:</strong> &nbsp; Economy</li>
+        <li><strong>Car Year:</strong> &nbsp; 2022</li>
+        <li><strong>Car Transmission:</strong> &nbsp; Automatic</li>
+      </ul>
+
+      <!-- Pricing info -->
+      <div class="price">
+        <p>$150.00</p>
+        <p>/per day</p>
+      </div>
+
+      <!-- Car description -->
+      <p>The Toyota Corolla is a reliable and fuel-efficient compact sedan...</p>
+
+      <!-- Availability status -->
+      <div class="availability">Availability <p>Available</p></div>
+
+      <!-- Additional car info -->
+      <ul>
+        <li><strong>No of Seats:</strong> &nbsp; 5</li>
+        <li><strong>No of Doors:</strong> &nbsp; 4</li>
+        <li><strong>Fuel Type:</strong> &nbsp; Petrol</li>
+        <li><strong>Air Conditioning:</strong> &nbsp; Yes</li>
+      </ul>
+
+      <!-- Booking button -->
+      <div>
+        <button>Book Now</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================
+       Similar Vehicles Section
+       ========================== -->
+  <article>
+    <h1>SIMILAR VEHICLES</h1>
+    <section class="buy">
+      <a href="">
+        <section>
           <div>
             <img src="images/ec67ae80d6c44367a653b67a570c96d326bda09b.jpg" alt="">
-            <button><img src="images/Polygon 6.svg" alt=""></button>
-            <button><img src="images/Polygon 6.svg" alt=""></button>
           </div>
-          <div>
-            <div><img src="images/ec67ae80d6c44367a653b67a570c96d326bda09b.jpg" alt=""></div>
-            <div><img src="images/0b068e72243c937eacf15570bb493f42848871eb.jpg" alt=""></div>
-            <div><img src="images/ec67ae80d6c44367a653b67a570c96d326bda09b.jpg" alt=""></div>
-            <div><img src="images/Ps-Blog-23.jpg" alt=""></div>
+          <div class="buydiv">
+            <!-- Star rating -->
+            <div class="shape">
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <p>(513)</p>
+            </div>
+            <p>Toyota Corolla</p>
+
+            <!-- Vehicle attributes icons -->
+            <div class="atributes">
+              <div>
+                <img src="images/ri_group-line.png" alt="" />
+                <p>4 passengers</p>
+              </div>
+              <div>
+                <img src="images/tabler_steering-wheel-filled.png" alt="" />
+                <p>Automatic base</p>
+              </div>
+              <div>
+                <img src="images/mdi_fuel-pump-outline.png" alt="" />
+                <p>Gasoline</p>
+              </div>
+              <div>
+                <img src="images/famicons_speedometer-outline.png" alt="" />
+                <p>450km</p>
+              </div>
+            </div>
+
+            <!-- Price and rent button -->
+            <div>
+              <p>$150/per day</p>
+              <button>Rent Now</button>
+            </div>
           </div>
         </section>
-        <section  class="second-sec">
-            <small>Toyota</small>
-            <h1>Toyota Corolla</h1>
-                          <div class="shape">
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-              </div>
-              <ul>
-            <li><strong>Car Type:</strong> &nbsp; Economy</li>
-            <li><strong>Car Year:</strong> &nbsp; 2022</li>
-            <li><strong>Car Transmission:</strong> &nbsp; Automatic</li>
-
-              </ul>
-              <div class="price">
-              <p>$150.00</p>
-              <p>/per day</p>
-              </div>
-              <p>The Toyota Corolla is a reliable and fuel-efficient compact sedan, perfect for city driving and everyday travel. It offers a smooth ride, comfortable seating for up to five passengers, and a spacious interior for its class. Known for its safety, durability, and low running costs, the Corolla is an excellent choice for individuals, couples, or small families looking for an affordable and comfortable rental. Ideal for both short trips and longer journeys.</p>
-              <div class="availability">Availability <p>Available</p></div>
-              <ul>
-                <li><strong>No of Seats:</strong> &nbsp; 5</li>
-                <li><strong>No of Doors:</strong> &nbsp; 4</li>
-                <li><strong>Fuel Type:</strong> &nbsp; Petrol</li>
-                <li><strong>Air Conditioning:</strong> &nbsp; Yes</li>
-              </ul>
-              <div>
-              <button>Book Now</button>
-              </div>
-
-        </section>
-    </main>
-    <article>
-      <h1>SIMILAR VECHICLES</h1>
-      <section class="buy">
-          <a href="">
-          <section>
-            <div>
-              <img
-                src="images/ec67ae80d6c44367a653b67a570c96d326bda09b.jpg"
-                alt=""
-              />
-            </div>
-            <div class="buydiv">
-              <div class="shape">
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <p>(513)</p>
-              </div>
-              <p>Toyota Corolla</p>
-              <div class="atributes">
-                <div>
-                  <img src="images/ri_group-line.png" alt="" />
-                  <p>4 passengers</p>
-                </div>
-                <div>
-                  <img src="images/tabler_steering-wheel-filled.png" alt="" />
-                  <p>Automatic base</p>
-                </div>
-                <div>
-                  <img src="images/mdi_fuel-pump-outline.png" alt="" />
-                  <p>Gasoline</p>
-                </div>
-                <div>
-                  <img src="images/famicons_speedometer-outline.png" alt="" />
-                  <p>450km</p>
-                </div>
-              </div>
-              <div>
-                <p>$150/per day</p>
-                <button>Rent Now</button>
-              </div>
-            </div>
-          </section>
-          </a>
-          <a href="">
-          <section>
-            <div>
-              <img
-                src="images/ec67ae80d6c44367a653b67a570c96d326bda09b.jpg"
-                alt=""
-              />
-            </div>
-            <div class="buydiv">
-              <div class="shape">
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <p>(513)</p>
-              </div>
-              <p>Toyota Corolla</p>
-              <div class="atributes">
-                <div>
-                  <img src="images/ri_group-line.png" alt="" />
-                  <p>4 passengers</p>
-                </div>
-                <div>
-                  <img src="images/tabler_steering-wheel-filled.png" alt="" />
-                  <p>Automatic base</p>
-                </div>
-                <div>
-                  <img src="images/mdi_fuel-pump-outline.png" alt="" />
-                  <p>Gasoline</p>
-                </div>
-                <div>
-                  <img src="images/famicons_speedometer-outline.png" alt="" />
-                  <p>450km</p>
-                </div>
-              </div>
-              <div>
-                <p>$150/per day</p>
-                <button>Rent Now</button>
-              </div>
-            </div>
-          </section>
-          </a>
-          <a href="">
-          <section>
-            <div>
-              <img
-                src="images/ec67ae80d6c44367a653b67a570c96d326bda09b.jpg"
-                alt=""
-              />
-            </div>
-            <div class="buydiv">
-              <div class="shape">
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <p>(513)</p>
-              </div>
-              <p>Toyota Corolla</p>
-              <div class="atributes">
-                <div>
-                  <img src="images/ri_group-line.png" alt="" />
-                  <p>4 passengers</p>
-                </div>
-                <div>
-                  <img src="images/tabler_steering-wheel-filled.png" alt="" />
-                  <p>Automatic base</p>
-                </div>
-                <div>
-                  <img src="images/mdi_fuel-pump-outline.png" alt="" />
-                  <p>Gasoline</p>
-                </div>
-                <div>
-                  <img src="images/famicons_speedometer-outline.png" alt="" />
-                  <p>450km</p>
-                </div>
-              </div>
-              <div>
-                <p>$150/per day</p>
-                <button>Rent Now</button>
-              </div>
-            </div>
-          </section>
-          </a>
-          <a href="">
-          <section>
-            <div>
-              <img
-                src="images/ec67ae80d6c44367a653b67a570c96d326bda09b.jpg"
-                alt=""
-              />
-            </div>
-            <div class="buydiv">
-              <div class="shape">
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <p>(513)</p>
-              </div>
-              <p>Toyota Corolla</p>
-              <div class="atributes">
-                <div>
-                  <img src="images/ri_group-line.png" alt="" />
-                  <p>4 passengers</p>
-                </div>
-                <div>
-                  <img src="images/tabler_steering-wheel-filled.png" alt="" />
-                  <p>Automatic base</p>
-                </div>
-                <div>
-                  <img src="images/mdi_fuel-pump-outline.png" alt="" />
-                  <p>Gasoline</p>
-                </div>
-                <div>
-                  <img src="images/famicons_speedometer-outline.png" alt="" />
-                  <p>450km</p>
-                </div>
-              </div>
-              <div>
-                <p>$150/per day</p>
-                <button>Rent Now</button>
-              </div>
-            </div>
-          </section>
-          </a>
-          <a href="">
-          <section>
-            <div>
-              <img
-                src="images/ec67ae80d6c44367a653b67a570c96d326bda09b.jpg"
-                alt=""
-              />
-            </div>
-            <div class="buydiv">
-              <div class="shape">
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <p>(513)</p>
-              </div>
-              <p>Toyota Corolla</p>
-              <div class="atributes">
-                <div>
-                  <img src="images/ri_group-line.png" alt="" />
-                  <p>4 passengers</p>
-                </div>
-                <div>
-                  <img src="images/tabler_steering-wheel-filled.png" alt="" />
-                  <p>Automatic base</p>
-                </div>
-                <div>
-                  <img src="images/mdi_fuel-pump-outline.png" alt="" />
-                  <p>Gasoline</p>
-                </div>
-                <div>
-                  <img src="images/famicons_speedometer-outline.png" alt="" />
-                  <p>450km</p>
-                </div>
-              </div>
-              <div>
-                <p>$150/per day</p>
-                <button>Rent Now</button>
-              </div>
-            </div>
-          </section>
-          </a>
-          <a href="">
-          <section>
-            <div>
-              <img
-                src="images/ec67ae80d6c44367a653b67a570c96d326bda09b.jpg"
-                alt=""
-              />
-            </div>
-            <div class="buydiv">
-              <div class="shape">
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <img src="images/Shape.png" alt="" />
-                <p>(513)</p>
-              </div>
-              <p>Toyota Corolla</p>
-              <div class="atributes">
-                <div>
-                  <img src="images/ri_group-line.png" alt="" />
-                  <p>4 passengers</p>
-                </div>
-                <div>
-                  <img src="images/tabler_steering-wheel-filled.png" alt="" />
-                  <p>Automatic base</p>
-                </div>
-                <div>
-                  <img src="images/mdi_fuel-pump-outline.png" alt="" />
-                  <p>Gasoline</p>
-                </div>
-                <div>
-                  <img src="images/famicons_speedometer-outline.png" alt="" />
-                  <p>450km</p>
-                </div>
-              </div>
-              <div>
-                <p>$150/per day</p>
-                <button>Rent Now</button>
-              </div>
-            </div>
-          </section>
-          </a>
-      </section>
-    </article>
-            <section class="foot2">
+      </a>
+      <a href="">
+        <section>
           <div>
-            <div>
-              <img src="images/hugeicons_steering.png" alt="" />
-              <p>AutoRent</p>
-            </div>
-            <div>
-              <img src="images/Icon4.png" alt="" />
-              <input type="email" name="" id="" placeholder="Enter Your Email"/>
-              <img src="images/Icon 5.png" alt="" />
-            </div>
+            <img src="images/ec67ae80d6c44367a653b67a570c96d326bda09b.jpg" alt="">
           </div>
+          <div class="buydiv">
+            <!-- Star rating -->
+            <div class="shape">
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <p>(513)</p>
+            </div>
+            <p>Toyota Corolla</p>
 
-          <div class="links">
-            <p>Quick Links</p>
-            <nav>
-              <a href="">Home</a>
-              <a href="">Services</a>
-              <a href="">Fleet</a>
-              <a href="">Testimonials</a>
-              <a href="">Contact Us</a>
-            </nav>
-          </div>
-          <div class="links">
-            <p>Quick Links</p>
-            <nav>
-              <a href="">Home</a>
-              <a href="">Services</a>
-              <a href="">Fleet</a>
-              <a href="">Testimonials</a>
-              <a href="">Contact Us</a>
-            </nav>
-          </div>
-          <div class="links">
-            <p>Quick Links</p>
-            <nav>
-              <a href="">Home</a>
-              <a href="">Services</a>
-              <a href="">Fleet</a>
-              <a href="">Testimonials</a>
-              <a href="">Contact Us</a>
-            </nav>
+            <!-- Vehicle attributes icons -->
+            <div class="atributes">
+              <div>
+                <img src="images/ri_group-line.png" alt="" />
+                <p>4 passengers</p>
+              </div>
+              <div>
+                <img src="images/tabler_steering-wheel-filled.png" alt="" />
+                <p>Automatic base</p>
+              </div>
+              <div>
+                <img src="images/mdi_fuel-pump-outline.png" alt="" />
+                <p>Gasoline</p>
+              </div>
+              <div>
+                <img src="images/famicons_speedometer-outline.png" alt="" />
+                <p>450km</p>
+              </div>
+            </div>
+
+            <!-- Price and rent button -->
+            <div>
+              <p>$150/per day</p>
+              <button>Rent Now</button>
+            </div>
           </div>
         </section>
-        <footer>
+      </a>
+      <a href="">
+        <section>
           <div>
-            <small>@2025 AutoRent. All Rights Reserved.</small>
-            <small>Terms & Conditions</small>
+            <img src="images/ec67ae80d6c44367a653b67a570c96d326bda09b.jpg" alt="">
           </div>
+          <div class="buydiv">
+            <!-- Star rating -->
+            <div class="shape">
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <p>(513)</p>
+            </div>
+            <p>Toyota Corolla</p>
+
+            <!-- Vehicle attributes icons -->
+            <div class="atributes">
+              <div>
+                <img src="images/ri_group-line.png" alt="" />
+                <p>4 passengers</p>
+              </div>
+              <div>
+                <img src="images/tabler_steering-wheel-filled.png" alt="" />
+                <p>Automatic base</p>
+              </div>
+              <div>
+                <img src="images/mdi_fuel-pump-outline.png" alt="" />
+                <p>Gasoline</p>
+              </div>
+              <div>
+                <img src="images/famicons_speedometer-outline.png" alt="" />
+                <p>450km</p>
+              </div>
+            </div>
+
+            <!-- Price and rent button -->
+            <div>
+              <p>$150/per day</p>
+              <button>Rent Now</button>
+            </div>
+          </div>
+        </section>
+      </a>
+      <a href="">
+        <section>
           <div>
-            <button><img src="images/Icon.png" alt="" /></button>
-            <button><img src="images/Icon (1).png" alt="" /></button>
-            <button><img src="images/Icon (2).png" alt="" /></button>
-            <button><img src="images/Icon (3).png" alt="" /></button>
+            <img src="images/ec67ae80d6c44367a653b67a570c96d326bda09b.jpg" alt="">
           </div>
-        </footer>
+          <div class="buydiv">
+            <!-- Star rating -->
+            <div class="shape">
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <p>(513)</p>
+            </div>
+            <p>Toyota Corolla</p>
+
+            <!-- Vehicle attributes icons -->
+            <div class="atributes">
+              <div>
+                <img src="images/ri_group-line.png" alt="" />
+                <p>4 passengers</p>
+              </div>
+              <div>
+                <img src="images/tabler_steering-wheel-filled.png" alt="" />
+                <p>Automatic base</p>
+              </div>
+              <div>
+                <img src="images/mdi_fuel-pump-outline.png" alt="" />
+                <p>Gasoline</p>
+              </div>
+              <div>
+                <img src="images/famicons_speedometer-outline.png" alt="" />
+                <p>450km</p>
+              </div>
+            </div>
+
+            <!-- Price and rent button -->
+            <div>
+              <p>$150/per day</p>
+              <button>Rent Now</button>
+            </div>
+          </div>
+        </section>
+      </a>
+      <a href="">
+        <section>
+          <div>
+            <img src="images/ec67ae80d6c44367a653b67a570c96d326bda09b.jpg" alt="">
+          </div>
+          <div class="buydiv">
+            <!-- Star rating -->
+            <div class="shape">
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <p>(513)</p>
+            </div>
+            <p>Toyota Corolla</p>
+
+            <!-- Vehicle attributes icons -->
+            <div class="atributes">
+              <div>
+                <img src="images/ri_group-line.png" alt="" />
+                <p>4 passengers</p>
+              </div>
+              <div>
+                <img src="images/tabler_steering-wheel-filled.png" alt="" />
+                <p>Automatic base</p>
+              </div>
+              <div>
+                <img src="images/mdi_fuel-pump-outline.png" alt="" />
+                <p>Gasoline</p>
+              </div>
+              <div>
+                <img src="images/famicons_speedometer-outline.png" alt="" />
+                <p>450km</p>
+              </div>
+            </div>
+
+            <!-- Price and rent button -->
+            <div>
+              <p>$150/per day</p>
+              <button>Rent Now</button>
+            </div>
+          </div>
+        </section>
+      </a>
+      <a href="">
+        <section>
+          <div>
+            <img src="images/ec67ae80d6c44367a653b67a570c96d326bda09b.jpg" alt="">
+          </div>
+          <div class="buydiv">
+            <!-- Star rating -->
+            <div class="shape">
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <p>(513)</p>
+            </div>
+            <p>Toyota Corolla</p>
+
+            <!-- Vehicle attributes icons -->
+            <div class="atributes">
+              <div>
+                <img src="images/ri_group-line.png" alt="" />
+                <p>4 passengers</p>
+              </div>
+              <div>
+                <img src="images/tabler_steering-wheel-filled.png" alt="" />
+                <p>Automatic base</p>
+              </div>
+              <div>
+                <img src="images/mdi_fuel-pump-outline.png" alt="" />
+                <p>Gasoline</p>
+              </div>
+              <div>
+                <img src="images/famicons_speedometer-outline.png" alt="" />
+                <p>450km</p>
+              </div>
+            </div>
+
+            <!-- Price and rent button -->
+            <div>
+              <p>$150/per day</p>
+              <button>Rent Now</button>
+            </div>
+          </div>
+        </section>
+      </a>
+      <a href="">
+        <section>
+          <div>
+            <img src="images/ec67ae80d6c44367a653b67a570c96d326bda09b.jpg" alt="">
+          </div>
+          <div class="buydiv">
+            <!-- Star rating -->
+            <div class="shape">
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <p>(513)</p>
+            </div>
+            <p>Toyota Corolla</p>
+
+            <!-- Vehicle attributes icons -->
+            <div class="atributes">
+              <div>
+                <img src="images/ri_group-line.png" alt="" />
+                <p>4 passengers</p>
+              </div>
+              <div>
+                <img src="images/tabler_steering-wheel-filled.png" alt="" />
+                <p>Automatic base</p>
+              </div>
+              <div>
+                <img src="images/mdi_fuel-pump-outline.png" alt="" />
+                <p>Gasoline</p>
+              </div>
+              <div>
+                <img src="images/famicons_speedometer-outline.png" alt="" />
+                <p>450km</p>
+              </div>
+            </div>
+
+            <!-- Price and rent button -->
+            <div>
+              <p>$150/per day</p>
+              <button>Rent Now</button>
+            </div>
+          </div>
+        </section>
+      </a>
+      <a href="">
+        <section>
+          <div>
+            <img src="images/ec67ae80d6c44367a653b67a570c96d326bda09b.jpg" alt="">
+          </div>
+          <div class="buydiv">
+            <!-- Star rating -->
+            <div class="shape">
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <img src="images/Shape.png" alt="" />
+              <p>(513)</p>
+            </div>
+            <p>Toyota Corolla</p>
+
+            <!-- Vehicle attributes icons -->
+            <div class="atributes">
+              <div>
+                <img src="images/ri_group-line.png" alt="" />
+                <p>4 passengers</p>
+              </div>
+              <div>
+                <img src="images/tabler_steering-wheel-filled.png" alt="" />
+                <p>Automatic base</p>
+              </div>
+              <div>
+                <img src="images/mdi_fuel-pump-outline.png" alt="" />
+                <p>Gasoline</p>
+              </div>
+              <div>
+                <img src="images/famicons_speedometer-outline.png" alt="" />
+                <p>450km</p>
+              </div>
+            </div>
+
+            <!-- Price and rent button -->
+            <div>
+              <p>$150/per day</p>
+              <button>Rent Now</button>
+            </div>
+          </div>
+        </section>
+      </a>
+    </section>
+  </article>
+
+  <!-- ==========================
+       Footer Section
+       Newsletter and Links
+       ========================== -->
+  <section class="foot2">
+
+    <!-- Logo & Email Subscription -->
+    <div>
+      <div>
+        <img src="images/hugeicons_steering.png" alt="AutoRent Logo" />
+        <p>AutoRent</p>
+      </div>
+      <div>
+        <img src="images/Icon4.png" alt="" />
+        <input type="email" placeholder="Enter Your Email"/>
+        <img src="images/Icon 5.png" alt="" />
+      </div>
+    </div>
+
+    <!-- Quick Links Navigation -->
+    <div class="links">
+      <p>Quick Links</p>
+      <nav>
+        <a href="">Home</a>
+        <a href="">Services</a>
+        <a href="">Fleet</a>
+        <a href="">Testimonials</a>
+        <a href="">Contact Us</a>
+      </nav>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="links">
+      <p>Contact Information</p>
+      <nav>
+        <a href="">+1 (800) 123-4567</a>
+        <a href="">support@yourcarrental.com</a>
+        <a href="">123 Main Street, City, State, ZIP Code</a>
+      </nav>
+    </div>
+
+    <!-- Legal Links -->
+    <div class="links">
+      <p>Legal Links</p>
+      <nav>
+        <a href="">Privacy Policy</a>
+        <a href="">Terms of Service</a>
+        <a href="">Cookie Policy</a>
+        <a href="">Accessibility Statement</a>
+      </nav>
+    </div>
+
+  </section>
+
+  <!-- ==========================
+       Footer Bottom
+       Copyright and Social Buttons
+       ========================== -->
+  <footer>
+    <div>
+      <small>@2025 AutoRent. All Rights Reserved.</small>
+      <small>Terms & Conditions</small>
+    </div>
+    <div>
+      <button><img src="images/Icon.png" alt="Facebook" /></button>
+      <button><img src="images/Icon (1).png" alt="Twitter" /></button>
+      <button><img src="images/Icon (2).png" alt="Instagram" /></button>
+      <button><img src="images/Icon (3).png" alt="LinkedIn" /></button>
+    </div>
+  </footer>
+
 </body>
+
+<!-- ==========================
+     Gallery JS for image slider
+     Updates main image and transitions on thumbnail click or arrow click
+     ========================== -->
 <script>
-  const bgImage = document.querySelector(".first-sec > div:first-of-type > img")
-  const subImages = document.querySelectorAll(".first-sec > div:nth-of-type(2) >div")
-  const leftArrow = document.querySelector(".first-sec button:first-of-type")
-  const rightArrow = document.querySelector(".first-sec button:nth-of-type(2)")
-  let imageIndex = 0
-  const bgRect = bgImage.getBoundingClientRect()
-  const subRect = subImages[0].getBoundingClientRect()
-  bgImage.src = subImages[0].querySelector("img").src
-  subImages.forEach((sub,i)=>{
-    sub.style.width = subRect.width + "px"
-    sub.style.height = subRect.height + "px"
-    sub.addEventListener("click",()=>{
-      imageIndex = i
-      bgImage.src = sub.querySelector("img").src
-      bgImage.style.width = bgRect.width + "px"   
-      bgImage.style.height= bgRect.height+ "px"   
-    })
-  })
-  leftArrow.addEventListener("click",()=>{
-    if(imageIndex > 0){
-      imageIndex--
-        bgImage.src = subImages[imageIndex].querySelector("img").src
-              bgImage.style.width = bgRect.width + "px"   
-      bgImage.style.height= bgRect.height+ "px" 
-    }
-  })
-  rightArrow.addEventListener("click",()=>{
-    if(imageIndex < subImages.length){
-            imageIndex++
-        bgImage.src = subImages[imageIndex].querySelector("img").src
-              bgImage.style.width = bgRect.width + "px"   
-      bgImage.style.height= bgRect.height+ "px" 
+  const bgImage = document.querySelector(".first-sec > div:first-of-type > img");
+  const subImages = document.querySelectorAll(".first-sec > div:nth-of-type(2) >div");
+  const leftArrow = document.querySelector(".first-sec button:first-of-type");
+  const rightArrow = document.querySelector(".first-sec button:nth-of-type(2)");
 
-    }
+  let imageIndex = 0;
 
-  })
+  // Get dimensions of main and sub images
+  const bgRect = bgImage.getBoundingClientRect();
+  const subRect = subImages[0].getBoundingClientRect();
+
+  // Set initial main image to first thumbnail
+  bgImage.src = subImages[0].querySelector("img").src;
+
+  // Setup click on thumbnails
+  subImages.forEach((sub, i) => {
+    // Set width/height of thumbnail
+    sub.style.width = subRect.width + "px";
+    sub.style.height = subRect.height + "px";
+
+    sub.addEventListener("click", () => {
+      imageIndex = i; // update index
+      bgImage.src = sub.querySelector("img").src;
+      bgImage.style.width = bgRect.width + "px";
+      bgImage.style.height = bgRect.height + "px";
+
+      // Animate fade-in of new image
+      gsap.fromTo(bgImage, {opacity:0}, {opacity:1, duration:1.5});
+    });
+  });
+
+  // Left arrow navigation
+  leftArrow.addEventListener("click", () => {
+    if (imageIndex > 0) {
+      imageIndex--;
+      bgImage.src = subImages[imageIndex].querySelector("img").src;
+      bgImage.style.width = bgRect.width + "px";
+      bgImage.style.height = bgRect.height + "px";
+      gsap.fromTo(bgImage, {opacity:0}, {opacity:1, duration:1.5});
+    }
+  });
+
+  // Right arrow navigation
+  rightArrow.addEventListener("click", () => {
+    if (imageIndex < subImages.length - 1) {
+      imageIndex++;
+      bgImage.src = subImages[imageIndex].querySelector("img").src;
+      bgImage.style.width = bgRect.width + "px";
+      bgImage.style.height = bgRect.height + "px";
+      gsap.fromTo(bgImage, {opacity:0}, {opacity:1, duration:1.5});
+    }
+  });
 </script>
 </html>

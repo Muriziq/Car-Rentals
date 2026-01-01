@@ -11,25 +11,32 @@ body {
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
 }
+/* =========================
+   HEADER STYLES
+   Applies to <header> section
+========================= */
 
+/* Main header container */
 header {
-  display: flex;
+  display: flex;                     /* Arrange logo, nav, and button in a row */
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between;     /* Space items across the header */
+  align-items: center;                /* Vertically center items */
   padding: 1rem 2rem;
   height: 60px;
 
-  position: fixed;
+  position: fixed;                    /* Keeps header fixed at top */
   top: 0;
   left: 0;
-  z-index: 9;
+  z-index: 9;                         /* Stays above other content */
   width: 100%;
-  border-radius: 0 0 2rem 2rem;
-  background-color: #000000;
-  backdrop-filter: blur(30px);
+
+  border-radius: 0 0 2rem 2rem;       /* Rounded bottom corners */
+  background-color: #000000;          /* Black background */
+  backdrop-filter: blur(30px);        /* Glass / blur effect */
 }
 
+/* Logo and navigation wrapper containers */
 header div {
   display: flex;
   flex-direction: row;
@@ -38,64 +45,97 @@ header div {
   font-weight: bold;
   gap: 0.2rem;
 }
-header > div:last-of-type{
+
+/* Navigation wrapper (for menu + nav links) */
+header > div:last-of-type {
   position: relative;
 }
+
+/* Navigation links container */
 header nav {
   display: flex;
   flex-direction: row;
   gap: 1rem;
   align-items: center;
 }
+
+/* Navigation links */
 header nav a {
   text-decoration: none;
   color: #ffffff;
   font-size: 0.8rem;
   transition: all 0.3s;
 }
+
+/* Mobile menu button (hidden on desktop) */
 .menu-btn {
-    display: none;
-    padding: 0.5rem 1rem;
-    border-radius: 1rem;
-    background: transparent;
-    border: 1px solid #D4D4D4;
-    cursor: pointer;
-    text-wrap: nowrap;
+  display: none;                      /* Shown only in responsive mode */
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  background: transparent;
+  border: 1px solid #D4D4D4;
+  cursor: pointer;
+  text-wrap: nowrap;
 }
 
-header nav :is(a:active, a:hover) {
-  color: #e20c26;
+/* Hover and active state for links */
+header nav :is(a:hover, a:active),
+.links :is(a:hover, a:active) {
+  color: #e20c26;                     /* Brand red color */
 }
+
+/* Header images (logo icon) */
 header img {
   height: 100%;
   width: auto;
 }
+
+/* Header main action button (SIGN IN) */
 header button {
   padding: 0.7rem 1rem;
   border: none;
   background-color: #e20c26;
   color: #ffffff;
   border-radius: 1rem;
+  transition: all 0.5s;
 }
+
+/* Button hover effect */
+header :is(button:hover, button:active) {
+  opacity: 0.8;
+}
+
+
+/* =========================
+   HERO / WELCOME SECTION
+   Applies to <article class="background">
+========================= */
+
+/* Main hero container */
 .background {
   padding: 1rem;
-  height: 100vh;
+  height: 100vh;                      /* Full screen height */
   overflow: hidden;
   position: relative;
-
 }
+
+/* Background image wrapper */
 .background-image {
   width: 100%;
   height: 100%;
   border-radius: 2rem;
   overflow: hidden;
 }
+
+/* Background image */
 .background-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;                  /* Cover container without distortion */
   object-position: 50% 57%;
 }
+
+/* Hero text (heading + paragraph) */
 .header-text {
   position: absolute;
   top: 15%;
@@ -104,30 +144,43 @@ header button {
   flex-direction: column;
   gap: 1.3rem;
 }
+
+/* Hero main heading */
 .header-text h1 {
   font-size: 3rem;
-
   font-weight: 800;
 }
+
+/* Hero description text */
 .header-text p {
   font-size: 1rem;
 }
-.search-place {
 
+
+/* =========================
+   SEARCH / BOOKING BAR
+========================= */
+
+/* Search container */
+.search-place {
   position: absolute;
   bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
   height: 100px;
+
   padding: 1rem;
   border-radius: 1rem;
   z-index: 1;
+
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 2rem;
 }
+
+/* Gradient border effect */
 .search-place::before {
   content: "";
   position: absolute;
@@ -136,6 +189,8 @@ header button {
   background-image: linear-gradient(#c88366, #eda9d270 44%);
   border-radius: inherit;
 }
+
+/* Inner background */
 .search-place::after {
   content: "";
   position: absolute;
@@ -147,6 +202,8 @@ header button {
   top: 0;
   left: 0;
 }
+
+/* Pickup / Date / Return blocks */
 .pickup {
   flex: 1;
   display: flex;
@@ -154,35 +211,48 @@ header button {
   gap: 0.5rem;
   padding: 0 0.5rem;
 }
+
+/* Pickup titles */
 .pickup > p {
   font-weight: 600;
   font-size: 0.9rem;
 }
-.pickup > div  div {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.5rem;
-}
-.pickup > div{
+
+/* Content row inside pickup */
+.pickup > div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
 }
-.pickup > div > img{
+
+/* Icon + text grouping */
+.pickup > div div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Dropdown arrow icon */
+.pickup > div > img {
   height: 12px;
   width: auto;
 }
+
+/* Vertical divider between sections */
 .vertical-rule {
   width: 1px;
   height: 100%;
   background-color: #ffffff;
 }
+
+/* Pickup value text */
 .pickup > div p {
   font-size: 0.8rem;
 }
+
+/* Search button */
 .search-place button {
   background-color: #e20c26;
   padding: 1rem 1.3rem;
@@ -190,45 +260,73 @@ header button {
   border-radius: 0.5rem;
 }
 
+/* Global button transition */
+button {
+  transition: all 0.5s;
+}
+
+/* Hover effects for multiple buttons */
+.search-place :is(button:hover, button:active),
+.works section :is(button:hover, button:active),
+.forms :is(button:hover, button:active),
+.buydiv > div:last-child :is(button:hover, button:active) {
+  background-color: #ac091c;
+}
+/* =========================
+   SERVICES / WHY CHOOSE US
+   Applies to <article class="choose">
+========================= */
+
+/* Main section container */
 .choose {
-  height: 100vh;
+  height: 100vh;                      /* Full viewport height */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
+  align-items: center;                /* Center content horizontally */
+  justify-content: center;            /* Center content vertically */
+  gap: 2rem;                          /* Space between header and grid */
 }
+
+/* Section header (title + description) */
 .choose > div {
   text-align: center;
 }
+
+/* Section title */
 .choose h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
+
+/* Features grid container */
 .choose section {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-columns: repeat(3, 250px);
-  grid-auto-rows: 220px;
+  grid-template-columns: repeat(3, 250px); /* 3 cards per row */
+  grid-auto-rows: 220px;                   /* Fixed card height */
   gap: 1.5rem;
 }
+
+/* Individual feature card */
 .choose section > div {
   border-radius: 0.6rem;
+  width: 250px;
+  height: 220px;
   max-width: 250px;
   max-height: 220px;
-  width:  250px;
-  height: 220px;
 
-  background-color: #0e0e10;
+  background-color: #0e0e10;           /* Dark card background */
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  align-items: start;
+  align-items: flex-start;             /* Align content to left */
+  justify-content: flex-start;
   padding: 1rem;
   gap: 1rem;
+
   position: relative;
-  overflow: hidden;
+  overflow: hidden;                    /* Hide glow overflow */
 }
+
+/* Glow / accent effect on card */
 .choose section > div::before {
   content: "";
   position: absolute;
@@ -240,64 +338,92 @@ header button {
   right: -50%;
   top: -50%;
 }
+
+/* Icon container */
 .choose section div > div {
-  background-color: #e20c26;
+  background-color: #e20c26;           /* Brand red */
   height: 40px;
   width: 47px;
   border-radius: 0.5rem;
   padding: 0.7rem;
+
   display: grid;
-  place-content: center;
+  place-content: center;               /* Center icon */
   margin-bottom: 1rem;
 }
-.choose section div img{
+
+/* Feature icon image */
+.choose section div img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
+/* Feature title */
 .choose .heading {
   font-size: 1.1rem;
   font-weight: 600;
 }
+
+/* Feature description text */
 .choose p {
   font-size: 0.75em;
   font-weight: 400;
 }
+/* =========================
+   HOW IT WORKS / STEPS SECTION
+   Applies to <article class="works">
+========================= */
+
+/* Main section container */
 .works {
-  height: 90vh;
-  background-color: #0e0e10;
+  height: 90vh;                          /* Almost full viewport height */
+  background-color: #0e0e10;             /* Dark background */
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;        /* Image + content layout */
   grid-auto-rows: 1fr;
   align-items: center;
 }
+
+/* Image wrapper */
 .works > div {
   height: 100%;
   overflow: hidden;
   display: grid;
   place-content: center;
 }
+
+/* Section image */
 .works > div img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
+/* Text content container */
 .works section {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-  
+
   padding-left: 3rem;
   padding-right: 1rem;
-  align-items: start;
-    position: relative;
-   
+
+  align-items: flex-start;
+  position: relative;
 }
 
+/* Section heading */
 .works section h2 {
   font-size: 1.8rem;
   font-weight: 600;
 }
+
+/* =========================
+   STEP NUMBER STYLES
+========================= */
+
+/* Step number wrapper */
 .numbers {
   width: 50px;
   height: 50px;
@@ -305,370 +431,534 @@ header button {
   min-height: 50px;
   border-radius: 50%;
 
-
   font-family: inherit;
-  position: relative;
   font-weight: 500;
+  position: relative;
   z-index: 5;
 }
-.numbers div{
+
+/* Inner number circle */
+.numbers div {
   background-color: #18181b;
   height: 100%;
   width: 100%;
-    border-radius: 50%;
-      display: grid;
-  place-content: center;
+  border-radius: 50%;
+
+  display: grid;
+  place-content: center;                 /* Center the number */
 }
-.works section > div > div{
+
+/* Step row (number + text) */
+.works section > div > div {
   display: flex;
   flex-direction: row;
   gap: 1rem;
-
 }
-.works section > div{
+
+/* Steps container */
+.works section > div {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 3rem;
   z-index: 4;
 }
-.works section > div::before{
+
+/* Vertical connecting line between steps */
+.works section > div::before {
+  content: "";
   position: absolute;
   width: 3px;
+  height: 95%;
   left: 22.5px;
   top: 50%;
   transform: translateY(-50%);
   background-color: #ffffff;
-  content: "";
-  height: 95% ;
   z-index: -1;
 }
-.numbers::before,.numbers.second::after{
-  width: 100%;
-  height: 10px;
+
+/* Masks to hide line above/below first & last steps */
+.numbers::before,
+.numbers.second::after {
   content: "";
   position: absolute;
+  width: 100%;
+  height: 10px;
   background-color: #0e0e10;
   z-index: -1;
-    top: 50%;
+  top: 50%;
   transform: translateY(-50%);
-
 }
-.numbers::before{
+
+/* Mask below first step */
+.numbers::before {
   top: 50px;
 }
-.numbers.second::after{
+
+/* Mask above second step */
+.numbers.second::after {
   top: 0;
 }
 
-.numbers.last::before{
+/* Mask above last step */
+.numbers.last::before {
   top: 0;
 }
 
+/* Step text container */
 .works section > div > div > div:nth-child(2) {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
+/* Step title */
 .bold {
   font-size: 1.2rem;
   font-weight: 600;
 }
+
+/* Call-to-action button */
 .works section button {
   padding: 0.7rem 1rem;
   border: none;
   border-radius: 1.3rem;
   background-color: #e20c26;
   color: inherit;
-
 }
+/* =========================
+   FLEET / EXPLORE OUR CARS
+   Applies to <article class="rent">
+========================= */
 
-
+/* Main section container */
 .rent {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   padding: 5rem 3rem;
   gap: 2rem;
 }
+
+/* Section header (title + description) */
 .rent > div {
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
+
+/* =========================
+   CATEGORIES / FILTER BAR
+========================= */
+
+/* Categories container */
 .categories {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
+/* Categories button group */
 .categories > div {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
+
   background-color: #171717;
-  width: auto;
   border-radius: 2rem;
   padding: 0.5rem 1rem;
 }
+
+/* Category buttons */
 .categories button {
   padding: 0.5rem 1rem;
   border-radius: 1rem;
   border: none;
+
   font-family: inherit;
   font-weight: 500;
   background-color: transparent;
   color: inherit;
+
   transition: all 0.5s;
 }
+
+/* Hover & active state */
 .categories :is(button:hover, button:active) {
   background-color: #0e0e10;
 }
+
+/* =========================
+   CAR LISTINGS (HORIZONTAL SCROLL)
+========================= */
+
+/* Listings container */
 .buy {
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
-  overflow-x: auto;
+
+  overflow-x: auto;        /* Horizontal scrolling */
   max-width: 100%;
-  width: auto;
   min-width: 0;
 }
-.buy  a{
-      color: #ffffff;
-      text-decoration: none;
-      height: auto;
-      width: auto;
-        margin-inline: auto;
+
+/* Anchor wrapper */
+.buy a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-inline: auto;
 }
+
+/* Individual car card */
 .buy section {
   width: 300px;
   min-width: 300px;
   max-width: 300px;
+
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-
 }
+
+/* Car image container */
 .buy section > div:first-child {
   height: 230px;
-  min-height: 230px;
-  max-height: 230px;
   border-radius: 1rem;
   overflow: hidden;
 }
+
+/* Car image */
 .buy section > div:first-child img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
+/* =========================
+   CAR DETAILS
+========================= */
+
+/* Info container */
 .buydiv {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
 }
+
+/* Rating stars */
 .shape {
   display: flex;
   flex-direction: row;
   gap: 0.3rem;
 }
+
+/* Car name */
 .buydiv > p {
   font-weight: 600;
 }
+
+/* Attributes grid */
 .atributes {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.8rem;
   font-size: 0.8rem;
 }
+
+/* Attribute item */
 .atributes > div {
   display: flex;
-  flex-direction: row;
   align-items: center;
   gap: 0.5rem;
 }
+
+/* Price + CTA row */
 .buydiv > div:last-child {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   font-weight: 500;
 }
+
+/* Rent button */
 .buydiv > div:last-child button {
   padding: 0.5rem 0.7rem;
   border: none;
-  background-color: #e20c26;
   border-radius: 1rem;
+
+  background-color: #e20c26;
   color: inherit;
   font-family: inherit;
 }
+
+/* =========================
+   STATS / ACHIEVEMENTS SECTION
+   Applies to <article class="ofssarticle">
+========================= */
+
+/* Main container */
 .ofssarticle {
   height: 100vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
+
+/* =========================
+   STATS BAR (TOP ROW)
+========================= */
+
+/* Stats wrapper */
 .offs {
   position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+
   padding: 2rem;
   background-color: #0e0e10;
 }
+
+/* Decorative blurred background glow */
 .offs::before {
   position: absolute;
   content: "";
+
   width: 20vw;
   height: 20vw;
   border-radius: 50%;
   background-color: #fb576b;
+
   filter: blur(50px);
   top: -18vw;
 }
+
+/* Individual stat item */
 .offs div {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-items: center;
 }
+
+/* Stat number */
 .offs h2 {
   font-weight: 700;
   font-size: 2.5rem;
 }
+
+/* Stat description */
 .offs p {
   font-size: 0.8rem;
 }
-.ofssarticle > section{
+
+/* =========================
+   IMAGE / SLIDER SECTION
+========================= */
+
+/* Image container */
+.ofssarticle > section {
   height: 100%;
   width: 100%;
   overflow: hidden;
   position: relative;
 }
+
+/* Background image */
 .ofssarticle > section img {
   width: 100%;
-  height:100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
+
+/* =========================
+   SLIDER TOGGLE INDICATORS
+========================= */
+
+/* Toggle dots wrapper */
 .toggle-row {
   display: flex;
-  flex-direction: row;
   gap: 0.5rem;
+
   position: absolute;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
 }
+
+/* Individual toggle dot */
 .toggle-row div {
   height: 15px;
   width: 15px;
   background-color: #ffffff;
   border-radius: 50%;
 }
+/* =========================
+   TESTIMONIALS / CUSTOMER REVIEWS
+   Applies to <article class="customer-comment">
+========================= */
+
+/* Main testimonials container */
 .customer-comment {
   height: 80vh;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
+
+  /* Dark gradient background */
   background-image: linear-gradient(#000000 30%, #0e0e10);
 }
+
+/* Section heading */
 .customer-comment h2 {
   font-weight: 600;
   font-size: 2rem;
 }
+
+/* Section description */
 .customer-comment > p {
   font-size: 0.8rem;
   text-align: center;
 }
+
+/* =========================
+   TESTIMONIALS SCROLL CONTAINER
+========================= */
+
+/* Horizontal scrolling container */
 .customer-comment > section {
   display: flex;
-  flex-direction: row;
   gap: 1.5rem;
+
   overflow-x: auto;
-  max-width: 100%;width: auto;
+  max-width: 100%;
   min-width: 0;
 }
+
+/* =========================
+   INDIVIDUAL TESTIMONIAL CARD
+========================= */
+
+/* Card container */
 .comments {
   width: 280px;
   height: 250px;
-  min-height: 250px;
   min-width: 280px;
+  min-height: 250px;
+
   padding: 0 1rem;
+  margin-inline: auto;
+
   background-color: #0e0e10;
   border-radius: 1rem;
+
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+
   position: relative;
-  z-index: 1;
   overflow: hidden;
-  margin-inline: auto ;
+  z-index: 1;
 }
-.comments::before {
+
+/* Decorative rotated shapes */
+.comments::before,
+.comments::after {
   content: "";
-  background-color: #18181b;
   position: absolute;
   height: 150px;
   width: 150px;
+  background-color: #18181b;
   border-radius: 0.5rem;
   z-index: -1;
+}
+
+/* Bottom-left decoration */
+.comments::before {
   bottom: -50px;
   left: -50px;
   transform: rotate(54.66deg);
 }
+
+/* Top-right decoration */
 .comments::after {
-  content: "";
-  background-color: #18181b;
-  position: absolute;
-  height: 150px;
-  width: 150px;
-  border-radius: 0.5rem;
-  z-index: -1;
   top: -50px;
   right: -50px;
   transform: rotate(-54.66deg);
 }
+
+/* =========================
+   CUSTOMER INFO (AVATAR + NAME)
+========================= */
+
+/* Customer info row */
 .comments > div:first-child {
   display: flex;
-  flex-direction: row;
   gap: 1rem;
   align-items: center;
 }
+
+/* Avatar container */
 .comments > div:first-child > div:first-child {
   height: 40px;
   width: 40px;
   border-radius: 50%;
   overflow: hidden;
 }
+
+/* Avatar image */
 .comments > div:first-child > div:first-child img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
+/* Name & location */
 .comments > div:first-child > div:last-child {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
 }
+
+/* Customer name */
 .comments > div:first-child > div:last-child > p:first-child {
   font-weight: 500;
 }
+
+/* Customer location */
 .comments > div:first-child > div:last-child > p:last-child {
   color: #62646c;
   font-weight: 400;
 }
+
+/* =========================
+   REVIEW CONTENT
+========================= */
+
+/* Review text */
 .comments > p {
   font-size: 0.8rem;
   line-height: 1.3rem;
 }
+
+/* Star rating icons */
 .comments > div:nth-child(2) img {
   height: 15px;
 }
+/* =========================
+   Contact Section Styles
+   Styles the "Get in Touch" section and its form
+========================= */
 .forms {
+  /* Main container for contact section */
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -678,53 +968,80 @@ header button {
   padding: 2rem 3rem;
   background-color: #0e0e10;
 }
+
 .forms > h2 {
+  /* Main heading of contact section */
   font-size: 2.5rem;
   font-weight: 600;
 }
+
 .forms > p {
+  /* Subtitle/description under heading */
   font-size: 0.8rem;
   text-align: center;
 }
+
 .forms > section {
+  /* Two-column layout: info + form */
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
 }
+
 .forms section > div:first-child {
+  /* Left column: instructions/contact info */
   display: flex;
   flex-direction: column;
   align-items: start;
   gap: 1rem;
 }
+
 .forms section > div:first-child h2 {
+  /* Sub-heading inside info column */
   font-size: 1.4rem;
   font-weight: 500;
 }
+
 .forms section > div:first-child p {
+  /* Info description text */
   font-size: 0.8rem;
   line-height: 1.2rem;
 }
+
 .forms section > div:last-child {
+  /* Right column: contact form */
   display: flex;
   flex-direction: column;
   align-items: start;
   gap: 1.3rem;
 }
+
 .forms section > div:last-child > div:first-child {
+  /* Grid for top input fields: name, email, phone */
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.3rem;
 }
+
 .forms section > div:last-child > div:nth-child(2) {
+  /* Full-width message input */
   width: 100%;
 }
+
+.forms input, .foot2 input {
+  /* Common input text color */
+  color: #ffffff;
+}
+
 .bold {
+  /* Label text style */
   font-size: 0.9rem;
 }
+
 .forms section input {
+  /* Input fields style */
   width: 100%;
   padding: 0.7rem 0;
   border: none;
@@ -732,7 +1049,9 @@ header button {
   outline: none;
   background-color: transparent;
 }
+
 .forms section button {
+  /* Send message button style */
   padding: 0.7rem 1rem;
   border: none;
   background-color: #e20c26;
@@ -740,7 +1059,13 @@ header button {
   color: inherit;
   margin-top: 1rem;
 }
+
+/* =========================
+   Footer CTA Section
+   First part of footer with call-to-action
+========================= */
 .foot > section:first-child {
+  /* Footer CTA container */
   display: flex;
   flex-direction: row;
   padding: 3rem;
@@ -753,45 +1078,60 @@ header button {
   overflow: hidden;
   z-index: 1;
 }
-.foot > section:first-child::before {
-  content: "";
-  background-image: url("images/Abstract Design (1).png");
-  position: absolute;
-  height: 300px;
-  width: 300px;
-  top: 0;
-  left: -20px;
-  z-index: -1;
-}
+
+.foot > section:first-child::before,
 .foot > section:first-child::after {
+  /* Decorative abstract images */
   content: "";
-  background-image: url("images/Abstract Design.png");
   position: absolute;
   height: 300px;
   width: 300px;
-  top: 0;
-  right: 30px;
   z-index: -1;
 }
+
+.foot > section:first-child::before {
+  left: -20px;
+  top: 0;
+  background-image: url("images/Abstract Design (1).png");
+}
+
+.foot > section:first-child::after {
+  right: 30px;
+  top: 0;
+  background-image: url("images/Abstract Design.png");
+}
+
 .foot > section:first-child div {
+  /* CTA text container */
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
+
 .foot > section:first-child h2 {
+  /* CTA heading */
   font-size: 2.2rem;
   font-weight: 600;
 }
+
 .foot > section:first-child p {
+  /* CTA description text */
   font-size: 0.8rem;
 }
+
 .foot > section:first-child button {
+  /* CTA button */
   padding: 0.7rem 1rem;
   border: none;
   background-color: #e20c26;
   border-radius: 1.3rem;
   color: inherit;
 }
+
+/* =========================
+   Footer Main Section
+   Footer content: subscription, links, contact info
+========================= */
 .foot2 {
   display: flex;
   flex-direction: row;
@@ -799,20 +1139,26 @@ header button {
   justify-content: space-between;
   background-color: #0e0e10;
 }
+
 .foot2 > div:first-child {
+  /* Logo + email subscription container */
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   justify-content: start;
 }
+
 .foot2 > div:first-child > div:first-child {
+  /* Logo and brand name */
   display: flex;
   flex-direction: row;
   align-items: center;
   font-weight: bold;
   gap: 0.2rem;
 }
+
 .foot2 > div:first-child > div:last-child {
+  /* Email input with icons */
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
@@ -820,26 +1166,39 @@ header button {
   padding: 0.5rem 1rem;
   border-radius: 0.3rem;
 }
+
 .foot2 > div:first-child input {
+  /* Email input field style */
   border: none;
   background-color: transparent;
   outline: none;
 }
+
 .foot2 nav {
+  /* Navigation links container */
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
+
 .foot2 nav a {
+  /* Footer links style */
   color: inherit;
   font-family: inherit;
+  transition: all 0.5s;
   text-decoration: none;
 }
+
 .links {
+  /* Columns for quick links, contact info, legal links */
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
+
+/* =========================
+   Footer Bottom / Social Media
+========================= */
 footer {
   display: flex;
   flex-direction: row;
@@ -848,12 +1207,15 @@ footer {
   align-items: center;
   background-color: #1a1a1a;
 }
+
 footer div {
   display: flex;
   flex-direction: row;
   gap: 0.7rem;
 }
+
 footer div button {
+  /* Social media buttons */
   height: 25px;
   width: 25px;
   background-color: #141414;
@@ -864,11 +1226,18 @@ footer div button {
   display: grid;
   place-content: center;
 }
+
+footer div :is(button:hover,button:active){
+  background-color: #34343a; /* Hover/active effect for social buttons */
+}
+
 footer img {
+  /* Images inside buttons */
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
+
 .login-page,.rental-car{
   position: fixed;
   top: 0;
@@ -1122,7 +1491,6 @@ header nav{
  width: 60vw;
 }
 header nav a{
-  border-bottom: 1px solid #ffffff;
   width: 100%;
   text-align: center;
   padding-bottom: 0.5rem;

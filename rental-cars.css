@@ -325,6 +325,12 @@ footer img {
   width: 100%;
   object-fit: cover;
 }
+.links a{
+  transition: all 0.5s;
+}
+.links :is(a:hover, a:active) {
+  color: #e20c26;                     /* Brand red color */
+}
 
 @media (max-width: 768px){
     main{
