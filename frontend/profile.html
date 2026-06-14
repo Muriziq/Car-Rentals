@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile - AutoRent</title>
+  <link rel="stylesheet" href="root.css" />
+  <link rel="stylesheet" href="profile.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+</head>
+<body>
+  <header>
+    <div>
+      <img src="images/hugeicons_steering.png" alt="" />
+      <p>AutoRent</p>
+    </div>
+    <div>
+      <button class="menu-btn">Menu &nbsp;&nbsp;☰</button>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#fleet">Fleet</a>
+        <a href="#">Support</a>
+      </nav>
+    </div>
+    <button >Log Out</button>
+  </header>
+
+  <main class="profile-layout">
+    
+    <aside class="profile-sidebar">
+      <div class="user-info">
+        <div class="avatar">
+          <img src="images/8e0d9c334104cfda155cdf9a73aed12e061a94b0.jpg" alt="User Avatar">
+        </div>
+        <h2>John Doe</h2>
+        <p>johndoe@email.com</p>
+      </div>
+      
+      <nav class="profile-nav">
+        <button class="active" data-target="dashboard">Dashboard</button>
+        <button data-target="bookings">My Bookings</button>
+        <button data-target="settings">Account Settings</button>
+      </nav>
+    </aside>
+
+    <section class="profile-content">
+      
+      <div class="profile-tab active" id="dashboard">
+        <h1>Welcome Back, John!</h1>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3>Active Rentals</h3>
+            <p>1</p>
+          </div>
+          <div class="stat-card">
+            <h3>Past Trips</h3>
+            <p>4</p>
+          </div>
+          <div class="stat-card">
+            <h3>Total Spent</h3>
+            <p>$1,250</p>
+          </div>
+        </div>
+
+        <h2 style="margin-top: 2rem; margin-bottom: 1rem;">Current Rental</h2>
+        <section class=" bookings">
+        <section class="bookings-sec">
+        <div class="booking-card">
+          <img src="images/ec67ae80d6c44367a653b67a570c96d326bda09b.jpg" alt="Toyota Corolla">
+          <div class="booking-details">
+            <h3>Toyota Corolla</h3>
+            <p><strong>Pickup:</strong> June 15, 2026 - New York, USA</p>
+            <p><strong>Return:</strong> June 20, 2026 - New York, USA</p>
+            <span class="status active-status">Active</span>
+          </div>
+          <button class="manage-btn">Manage</button>
+        </div>
+
+        </section>
+
+        </section>
+
+      </div>
+<div class="profile-tab" id="bookings">
+        <h1>My Bookings</h1>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">View your current and past rental history.</p>
+
+        <div class="bookings">
+            <section class="bookings-sec">
+          <div class="booking-card">
+            <img src="images/ec67ae80d6c44367a653b67a570c96d326bda09b.jpg" alt="Toyota Corolla">
+            <div class="booking-details">
+              <h3>Toyota Corolla</h3>
+              <p><strong>Pickup:</strong> June 15, 2026 - New York, USA</p>
+              <p><strong>Return:</strong> June 20, 2026 - New York, USA</p>
+              <span class="status active-status">Active</span>
+            </div>
+            <p class="booking-price">$750.00</p>
+            <button class="manage-btn">Manage</button>
+          </div>
+
+          <div class="booking-card">
+            <img src="images/0b068e72243c937eacf15570bb493f42848871eb.jpg" alt="Honda Civic">
+            <div class="booking-details">
+              <h3>Honda Civic</h3>
+              <p><strong>Pickup:</strong> Feb 10, 2026 - Los Angeles, USA</p>
+              <p><strong>Return:</strong> Feb 12, 2026 - Los Angeles, USA</p>
+              <span class="status completed-status">Completed</span>
+            </div>
+            <p class="booking-price" style="color: var(--text-secondary);">$240.00</p>
+            <button class="manage-btn" style="border-color: var(--surface-dark-3); color: var(--text-secondary);">Receipt</button>
+          </div>
+
+            </section>
+
+        </div>
+      </div>
+
+      <div class="profile-tab" id="settings">
+        <h1>Account Settings</h1>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Update your personal details and verify your identity.</p>
+
+        <div class="settings-grid">
+          
+          <section class="settings-section">
+            <h2>Personal Information</h2>
+            <form action="#" class="settings-form">
+              <div class="input-row">
+                <div class="settings-input">
+                  <label>First Name</label>
+                  <input type="text" value="John">
+                </div>
+                <div class="settings-input">
+                  <label>Last Name</label>
+                  <input type="text" value="Doe">
+                </div>
+              </div>
+              <div class="settings-input">
+                <label>Email Address</label>
+                <input type="email" value="johndoe@email.com">
+              </div>
+              <div class="settings-input">
+                <label>Phone Number</label>
+                <input type="tel" value="+1 234 567 8900">
+              </div>
+              <button type="submit" class="save-btn">Save Changes</button>
+            </form>
+          </section>
+
+          <section class="settings-section">
+            <h2>Identity Verification</h2>
+            <div class="verify-box">
+              <div>
+                <p><strong>Driver's License</strong></p>
+                <p style="font-size: 0.8rem; color: var(--text-secondary);">Required to rent a vehicle.</p>
+              </div>
+              <button class="manage-btn" style="padding: 0.5rem 1rem;">Upload ID</button>
+            </div>
+
+            <h2 style="margin-top: 2rem;">Security</h2>
+            <form action="#" class="settings-form">
+              <div class="settings-input">
+                <label>Current Password</label>
+                <input type="password" placeholder="••••••••">
+              </div>
+              <div class="settings-input">
+                <label>New Password</label>
+                <input type="password" placeholder="New Password">
+              </div>
+              <button type="submit" class="save-btn" style="background-color: var(--surface-dark-3); color: var(--text-primary);">Update Password</button>
+            </form>
+          </section>
+
+        </div>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="profile.js"></script>
+</body>
+</html>

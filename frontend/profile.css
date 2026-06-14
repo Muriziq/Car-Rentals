@@ -1,0 +1,336 @@
+ /* =========================================
+   PROFILE PAGE STYLES
+   ========================================= */
+.profile-layout {
+  display: flex;
+  flex-direction: row;
+  padding: 6rem 1rem 2rem 1rem; /* Top padding clears the fixed header */
+  gap: 2rem;
+  height: 100vh;
+  background-color: var(--bg-primary);
+}
+
+/* Sidebar */
+.profile-sidebar {
+  width: 300px;
+  background-color: var(--surface-dark-1);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+}
+
+.user-info {
+  text-align: center;
+  border-bottom: 1px solid var(--border-dark);
+  padding-bottom: 1.5rem;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 1rem auto;
+  overflow: hidden;
+  border: 3px solid var(--accent-red);
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-info p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+.profile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.profile-nav button {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  text-align: left;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.profile-nav button:hover {
+  background-color: var(--surface-dark-3);
+}
+
+.profile-nav button.active {
+  background-color: var(--accent-red);
+  color: var(--text-primary);
+}
+
+/* Content Area */
+.profile-content {
+  flex: 1;
+  background-color: var(--surface-dark-1);
+  border-radius: 1rem;
+  padding: 2.5rem;
+  overflow-y: auto;
+}
+
+.profile-tab {
+  display: none;
+}
+
+.profile-tab.active {
+  display: block;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.stat-card {
+  background-color: var(--surface-dark-3);
+  padding: 1.5rem 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  border: 2px solid var(--border-dark);
+  box-shadow:5px 7px 5px 1px var(--surface-dark-5);
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  color: var(--accent-red);
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+.bookings-sec {
+  /* Switch from flex to grid */
+  display: grid;
+  /* This tells the grid: "Be at least 100% of the screen width, but if the longest card needs more space, expand everything to fit that max-content." */
+  gap: 1.5rem;
+  min-width: max-content;
+  width: 100%;
+  grid-template-columns: 1fr;
+}
+.bookings{
+  overflow-x: auto;
+  padding-bottom: 1rem; /* Keeps the scrollbar from cutting off borders */
+
+}
+/* Booking Card */
+.booking-card {
+  width: 100%; /* Tells every card to stretch to the width the grid calculated */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: var(--surface-dark-3);
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border-dark);
+
+}
+
+.booking-card img {
+  width: 150px;
+  height: 100px;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.booking-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-wrap: nowrap;
+  width: auto;
+  margin-right: 1rem;
+}
+
+.booking-details p {
+  font-size: 0.85rem;
+  color: var(--text-input);
+}
+
+.status {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  width: fit-content;
+  margin-top: 0.5rem;
+}
+
+.active-status {
+  background-color: #28a74533;
+  color: #28a745;
+  border: 1px solid #28a745;
+}
+
+.manage-btn {
+  background-color: transparent;
+  border: 1px solid var(--text-primary);
+  color: var(--text-primary);
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+}
+
+.manage-btn:hover {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 991px) {
+.profile-content{
+    padding: 2rem 1rem;
+}
+  .profile-layout {
+    flex-direction: column;
+    padding: 6rem 1rem 1rem 1rem;
+     height: auto;
+  }
+  .profile-sidebar {
+    width: 100%;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  /* .booking-card {
+    flex-direction: column;
+    text-align: center;
+  } */
+  .booking-card img {
+    width: 100%;
+    height: 180px;
+  }
+  .manage-btn {
+    width: 100%;
+  }
+}
+
+
+.completed-status {
+  background-color: #6c757d33;
+  color: #adb5bd;
+  border: 1px solid #6c757d;
+}
+
+.booking-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* --- Settings Tab Styles --- */
+.settings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.settings-section {
+  border: 2px solid var(--border-dark);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.settings-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-dark);
+  padding-bottom: 0.5rem;
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.settings-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.settings-input label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.settings-input input {
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-dark);
+  background-color: var(--surface-dark-3);
+  color: var(--text-primary);
+  outline: none;
+  font-family: inherit;
+}
+
+.settings-input input:focus {
+  border-color: var(--accent-red);
+}
+
+.save-btn {
+  background-color: var(--accent-red);
+  color: var(--text-primary);
+  border: none;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s;
+}
+
+.save-btn:hover {
+  opacity: 0.9;
+}
+
+.verify-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: var(--surface-dark-3);
+  border-radius: 0.8rem;
+  border: 1px dashed var(--text-secondary);
+}
+
+/* Settings Mobile Responsiveness */
+@media (max-width: 991px) {
+  .settings-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

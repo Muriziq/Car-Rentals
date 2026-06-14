@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="root.css">
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -15,7 +16,7 @@
           <p>AutoRent</p>
         </div>
         <div>
-              <button class="menu-btn">Menu &nbsp;&nbsp;☰</button>
+         <button class="menu-btn">Menu &nbsp;&nbsp;☰</button>
         <nav>
           <a href="#home">Home</a>
           <a href="#services">Services</a>
@@ -903,73 +904,133 @@
         </footer>
       </article>
     </main>
-    <article class="login-page"style="display: none;" >
-      <section class="login" style="display: none;" >
-        <img class="cancel" src="images/Vector (2).svg" alt="">
-        <h1>LOGIN </h1>
-        <div class="logininput">
-          <p>Username Or Email</p>
-          <div><img src="images/Group 1171275008.svg" alt=""><input type="text" name="" id="" placeholder="Username Or Email"></div>
+<article class="login-page" style="display: none;">
+  <section class="login" style="display: none;">
+    <img class="cancel" src="images/Vector (2).svg" alt="Close Modal" role="button" tabindex="0">
+    <h1>LOGIN</h1>
+    
+    <form action="#" method="POST">
+      <div class="logininput">
+        <label for="login-username">Username Or Email</label>
+        <div>
+          <img src="images/Group 1171275008.svg" alt="" aria-hidden="true">
+          <input type="text" name="username" id="login-username" placeholder="Username Or Email" required>
         </div>
-        <div class="logininput">
-          <p>Password</p>
-          <div><img src="images/Group 1171275010.svg" alt=""><input type="password" name="" id="" placeholder="Password" class="seePass"><img class="see" src="images/Group 1171275009.svg" alt=""></div>
+      </div>
+      
+      <div class="logininput">
+        <label for="login-password">Password</label>
+        <div>
+          <img src="images/Group 1171275010.svg" alt="" aria-hidden="true">
+          <input type="password" name="password" id="login-password" placeholder="Password" class="seePass" required>
+          <img class="see" src="images/Group 1171275009.svg" alt="Toggle Password Visibility" role="button" tabindex="0">
         </div>
-        <button>Login</button>
-        <div class="forget"><a href="">Forget Password?</a> <button>Sign Up</button></div>
-      </section>
-      <section class="signup" style="display: none;">
-        <img class="cancel" src="images/Vector (2).svg" alt="">
-        <h1>SIGN UP</h1>
-        <div >
+      </div>
+      
+      <button style="margin-top: 1.5rem;" type="submit">Login</button>
+      
+      <div class="forget">
+        <a href="#">Forget Password?</a> 
+        <button type="button" class="switch-signup">Sign Up</button>
+      </div>
+    </form>
+  </section>
+
+<section class="signup" style="display: none;">
+    <img class="cancel" src="images/Vector (2).svg" alt="Close Modal" role="button" tabindex="0">
+    <h1>SIGN UP</h1>
+    
+    <form action="#" method="POST" id="signup-form">
+      
+      <div class="form-step active" id="step-1">
+        <div class="input-grid">
+          <div class="logininput">
+            <label for="signup-firstname">First Name</label>
+            <div>
+              <img src="images/Group 1171275008.svg" alt="" aria-hidden="true">
+              <input type="text" name="firstname" id="signup-firstname" placeholder="First Name" required>
+            </div>
+          </div>
+
+          <div class="logininput">
+            <label for="signup-lastname">Last Name</label>
+            <div>
+              <img src="images/Group 1171275008.svg" alt="" aria-hidden="true">
+              <input type="text" name="lastname" id="signup-lastname" placeholder="Last Name" required>
+            </div>
+          </div>
+
+          <div class="logininput">
+            <label for="signup-username">Username</label>
+            <div>
+              <img src="images/Group 1171275008.svg" alt="" aria-hidden="true">
+              <input type="text" name="username" id="signup-username" placeholder="Username" required>
+            </div>
+          </div>
+
+          <div class="logininput">
+            <label for="signup-email">Email</label>
+            <div>
+              <img src="images/Group 1171275008.svg" alt="" aria-hidden="true">
+              <input type="email" name="email" id="signup-email" placeholder="Email" required>
+            </div>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="button"  style="margin-top: 1.5rem;"  class="next-btn" data-next="step-2">Next</button>
+        </div>
+      </div>
+
+      <div class="form-step" id="step-2" style="display: none;">
+        <div class="input-grid">
+          <div class="logininput">
+            <label for="signup-country">Country</label>
+            <div>
+              <img src="images/Group 1171275008.svg" alt="" aria-hidden="true">
+              <input type="text" name="country" id="signup-country" placeholder="Country" required>
+            </div>
+          </div>
+
+          <div class="logininput">
+            <label for="signup-state">State</label>
+            <div>
+              <img src="images/Group 1171275008.svg" alt="" aria-hidden="true">
+              <input type="text" name="state" id="signup-state" placeholder="State" required>
+            </div>
+          </div>
+        </div>
 
                   <div class="logininput">
-          <p>First Name</p>
-          <div><img src="images/Group 1171275008.svg" alt=""><input type="text" name="" id="" placeholder="First Name"></div>
-        </div>
+            <label for="signup-password">Password</label>
+            <div>
+              <img src="images/Group 1171275010.svg" alt="" aria-hidden="true">
+              <input type="password" name="password" id="signup-password" placeholder="Password" class="seePass" required>
+              <img class="see" src="images/Group 1171275009.svg" alt="Toggle Password Visibility" role="button" tabindex="0">
+            </div>
+          </div>
+          
+          <div class="logininput">
+            <label for="signup-confirm">Confirm Password</label>
+            <div>
+              <img src="images/Group 1171275010.svg" alt="" aria-hidden="true">
+              <input type="password" name="confirm-password" id="signup-confirm" placeholder="Confirm Password" class="seePass" required>
+              <img class="see" src="images/Group 1171275009.svg" alt="Toggle Password Visibility" role="button" tabindex="0">
+            </div>
+          </div>
 
-                  <div class="logininput">
-          <p>Last Name</p>
-          <div><img src="images/Group 1171275008.svg" alt=""><input type="text" name="" id="" placeholder="Last Name"></div>
+                <div class="form-actions"  style="margin-top: 1.5rem;">
+          <button type="button" class="back-btn" data-back="step-1" style="background-color: var(--surface-dark-3);">Back</button>
+          <button class="next-btn" type="submit">Sign Up</button>
         </div>
+      </div>
 
-                  <div class="logininput">
-          <p>Username</p>
-          <div><img src="images/Group 1171275008.svg" alt=""><input type="text" name="" id="" placeholder="Username"></div>
-        </div>
 
-                  <div class="logininput">
-          <p>Email</p>
-          <div><img src="images/Group 1171275008.svg" alt=""><input type="email" name="" id="" placeholder="Email"></div>
-        </div>
-
-                  <div class="logininput">
-          <p>Country</p>
-          <div><img src="images/Group 1171275008.svg" alt=""><input type="text" name="" id="" placeholder="Country"></div>
-        </div>
-
-                  <div class="logininput">
-          <p>State</p>
-          <div><img src="images/Group 1171275008.svg" alt=""><input type="text" name="" id="" placeholder="State"></div>
-        </div>
-
-        <div class="logininput">
-          <p>Password</p>
-          <div><img src="images/Group 1171275010.svg" alt=""><input type="password" name="" id="" placeholder="Password" class="seePass"><img class="see" src="images/Group 1171275009.svg" alt=""></div>
-        </div>
-                <div class="logininput">
-          <p>Confirm Password</p>
-          <div><img src="images/Group 1171275010.svg" alt=""><input type="password" name="" id="" placeholder="Confirm Password" class="seePass"><img class="see" src="images/Group 1171275009.svg" alt=""></div>
-        </div>
-        </div>
-        <p>
-          Already Have An Account Login
-        </p>
-        <button>Login</button>
-
-      </section>
-    </article>
-    <article class="rental-car" style="display: none;">
+      
+      <p class="switch-login" tabindex="0">Already Have An Account? Login</p>
+    </form>
+  </section>
+</article>
+    <article class="rental-car" >
       <section>
                 <img class="cancel" src="images/Vector (2).svg" alt="">
 
@@ -1873,5 +1934,5 @@
       </section>
     </article>
   </body>
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </html>

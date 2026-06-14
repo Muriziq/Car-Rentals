@@ -1,0 +1,177 @@
+:root {
+  /* Base & Typography */
+  --bg-primary: #000000;
+  --text-primary: #ffffff;
+  --text-secondary: #62646c;
+  --text-input: #ffffffc4;
+  
+  /* Theme Accents */
+  --accent-red: #e20c26;
+  --accent-blue: rgb(47, 0, 255);
+  --blur-pink: #fb576b;
+
+  /* Surface / Container Backgrounds */
+  --surface-dark-1: #0e0e10; 
+  --surface-dark-2: #171717; 
+  --surface-dark-3: #18181b; 
+  --surface-dark-4: #1a1a1a; 
+  --surface-dark-5: #070708; 
+  --surface-menu: #17171a;   
+  --icon-bg: #141414;        
+
+  /* Borders & Lines */
+  --border-dark: #2f2f37;
+  --border-light: #D4D4D4;
+
+  /* Gradients & Overlays */
+  --gradient-orange: #c88366;
+  --gradient-pink-trans: #eda9d270;
+  --overlay-dark: #000000b7;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap");
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+  border-radius: 0 0 2rem 2rem;
+  background-color: var( --surface-dark-4);
+  backdrop-filter: blur(30px);
+}
+
+header div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  font-weight: bold;
+  gap: 0.2rem;
+}
+
+
+header nav {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+header nav a {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  transition: all 0.3s;
+}
+
+
+.menu-btn {
+  display: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  background: transparent;
+  border: 1px solid var(--border-light);
+  cursor: pointer;
+  text-wrap: nowrap;
+}
+
+header nav :is(a:active, a:hover) {
+  color: var(--accent-red);
+}
+
+header img {
+  height: 100%;
+  width: auto;
+}
+
+header button {
+  padding: 0.7rem 1rem;
+  border: none;
+  background-color: var(--accent-red);
+  color: var(--text-primary);
+  border-radius: 1rem;
+}
+
+
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@media (max-width:767px) {
+  .menu-btn {
+    display: block;
+  }
+  
+  header {
+    padding: 1rem;
+  }
+  
+  header nav {
+    display: none;
+    position: absolute;
+    /* THE FIX: Use top: 100% instead of bottom */
+    top: 100%; 
+    margin-top: 0.5rem; /* Adds a tiny gap below the header */
+    flex-direction: column;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--surface-menu);
+    padding: 0 1rem;
+    width: 95vw;
+    gap:0rem;
+    border-radius: 1rem; /* Rounds the corners of the mobile dropdown */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* Optional: Adds a slight shadow so it pops */
+  }
+  
+  header nav a {
+    border-bottom: 1px solid var(--text-primary);
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  /* Removes the border from the very last link so it looks cleaner */
+  header nav a:last-child {
+    border-bottom: none; 
+  }
+  
+  header .active {
+    display: flex;
+  }
+}
