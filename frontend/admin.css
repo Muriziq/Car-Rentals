@@ -1,0 +1,236 @@
+/* =========================================
+   ADMIN DASHBOARD STYLES (FLEXBOX LAYOUT)
+   ========================================= */
+.admin-body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+.admin-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- Top Header --- */
+.admin-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  background-color: var(--surface-dark-4);
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.admin-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.admin-brand img {
+  height: 30px;
+}
+
+.admin-brand h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.admin-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--surface-dark-1);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  border: 1px solid var(--border-dark);
+}
+
+.admin-profile img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* --- Main Flex Row --- */
+.admin-main-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex: 1; /* Takes up the remaining height below the header */
+}
+
+/* --- Sidebar --- */
+.admin-sidebar {
+  width: 260px;
+  background-color: var(--surface-dark-1);
+  border-right: 1px solid var(--border-dark);
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.admin-nav button {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  text-align: left;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.admin-nav button:hover, .admin-nav button.active {
+  background-color: var(--surface-dark-3);
+  color: var(--text-primary);
+  border-left: 4px solid var(--accent-red);
+}
+
+.admin-logout {
+  padding: 1.5rem 1rem;
+  border-top: 1px solid var(--border-dark);
+}
+
+.admin-logout button {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--surface-dark-3);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/* --- Content Area --- */
+.admin-content-area {
+  flex: 1; /* Stretches to fill the rest of the row */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: stretch; /* Prevents global main tag centering bugs */
+}
+
+/* --- Metrics Grid --- */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.metric-card {
+  background-color: var(--surface-dark-1);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border-dark);
+}
+
+.metric-card h3 {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.metric-card p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+/* --- Admin Tables --- */
+.dashboard-tables {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.admin-table-wrapper {
+  background-color: var(--surface-dark-1);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border-dark);
+  overflow-x: auto;
+}
+
+.admin-table-wrapper h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-table th, .admin-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-dark);
+  text-wrap: nowrap;
+}
+
+.admin-table th {
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.pending-status {
+  background-color: #ffc10733;
+  color: #ffc107;
+  border: 1px solid #ffc107;
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+}
+
+.active-status {
+  background-color: #28a74533;
+  color: #28a745;
+  border: 1px solid #28a745;
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+}
+
+.action-btn {
+  background-color: var(--surface-dark-3);
+  color: var(--text-primary);
+  border: 1px solid var(--border-dark);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.action-btn:hover {
+  border-color: var(--accent-red);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 991px) {
+  .admin-main-wrapper {
+    flex-direction: column;
+  }
+  .admin-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border-dark);
+  }
+  .admin-content-area {
+    padding: 1rem;
+  }
+}

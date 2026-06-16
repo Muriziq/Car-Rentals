@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard - AutoRent</title>
+  <link rel="stylesheet" href="root.css" />
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+  
+  <div class="admin-layout">
+    
+    <div class="admin-topbar">
+      <div class="admin-brand">
+        <img src="images/hugeicons_steering.png" alt="Logo" draggable="false" />
+        <h2>Admin Panel</h2>
+      </div>
+      <div class="admin-profile">
+        <img src="images/8e0d9c334104cfda155cdf9a73aed12e061a94b0.jpg" alt="Admin" draggable="false">
+        <p>Super Admin</p>
+      </div>
+    </div>
+
+    <div class="admin-main-wrapper">
+      
+      <aside class="admin-sidebar">
+        <nav class="admin-nav">
+          <button class="active" data-target="admin-overview">Overview</button>
+          <button data-target="admin-fleet">Fleet Management</button>
+          <button data-target="admin-orders">Orders & Bookings</button>
+          <button data-target="admin-customers">Customers & KYC</button>
+        </nav>
+        <div class="admin-logout">
+          <button>Log Out</button>
+        </div>
+      </aside>
+
+      <div class="admin-content-area">
+        <h1>Dashboard Overview</h1>
+        
+        <section class="admin-content active" id="admin-overview">
+          
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <h3>Monthly Revenue</h3>
+              <p>$12,450</p>
+            </div>
+            <div class="metric-card">
+              <h3>Active Rentals</h3>
+              <p>8</p>
+            </div>
+            <div class="metric-card">
+              <h3>Pending KYC</h3>
+              <p>3</p>
+            </div>
+            <div class="metric-card">
+              <h3>Available Cars</h3>
+              <p>15 / 24</p>
+            </div>
+          </div>
+
+          <div class="dashboard-tables">
+            <div class="admin-table-wrapper">
+              <h2>Recent Booking Requests</h2>
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Customer</th>
+                    <th>Vehicle</th>
+                    <th>Dates</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Jane Smith</td>
+                    <td>Toyota Corolla</td>
+                    <td>Oct 12 - Oct 15</td>
+                    <td><span class="status pending-status">Pending</span></td>
+                    <td><button class="action-btn">Review</button></td>
+                  </tr>
+                  <tr>
+                    <td>Michael Johnson</td>
+                    <td>Honda Civic</td>
+                    <td>Oct 14 - Oct 20</td>
+                    <td><span class="status active-status">Approved</span></td>
+                    <td><button class="action-btn">View</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
+              <section class="admin-content" id="admin-fleet" style="display: none;">
+          <div class="admin-header-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <h2>Fleet Inventory</h2>
+            <button class="action-btn" style="background-color: var(--accent-red); color: var(--text-primary); border: none;">+ Add New Vehicle</button>
+          </div>
+          
+          <div class="admin-table-wrapper">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Vehicle</th>
+                  <th>Category</th>
+                  <th>Plate Number</th>
+                  <th>Price/Day</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Toyota Corolla (2022)</td>
+                  <td>Economy</td>
+                  <td>LND-124-XY</td>
+                  <td>$150.00</td>
+                  <td><span class="status active-status">Available</span></td>
+                  <td><button class="action-btn">Edit</button></td>
+                </tr>
+                <tr>
+                  <td>Range Rover Urus</td>
+                  <td>Luxury</td>
+                  <td>EKY-909-AB</td>
+                  <td>$850.00</td>
+                  <td><span class="status pending-status">Rented</span></td>
+                  <td><button class="action-btn">Edit</button></td>
+                </tr>
+                <tr>
+                  <td>Honda Civic (2021)</td>
+                  <td>Economy</td>
+                  <td>ABC-123-YZ</td>
+                  <td>$140.00</td>
+                  <td><span class="status" style="background-color: #dc354533; color: #dc3545; border: 1px solid #dc3545; padding: 0.3rem 0.8rem; border-radius: 1rem; font-size: 0.8rem;">Maintenance</span></td>
+                  <td><button class="action-btn">Edit</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="admin-content" id="admin-orders" style="display: none;">
+          <h2 style="margin-bottom: 1.5rem;">All Reservations</h2>
+          <div class="admin-table-wrapper">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Customer</th>
+                  <th>Vehicle</th>
+                  <th>Pickup - Return</th>
+                  <th>Total</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#ORD-8821</td>
+                  <td>Jane Smith</td>
+                  <td>Toyota Corolla</td>
+                  <td>Oct 12 - Oct 15</td>
+                  <td>$450.00</td>
+                  <td><span class="status pending-status">Pending</span></td>
+                  <td><button class="action-btn">Manage</button></td>
+                </tr>
+                <tr>
+                  <td>#ORD-8820</td>
+                  <td>Michael Johnson</td>
+                  <td>Honda Civic</td>
+                  <td>Oct 14 - Oct 20</td>
+                  <td>$840.00</td>
+                  <td><span class="status active-status">Active</span></td>
+                  <td><button class="action-btn">Manage</button></td>
+                </tr>
+                <tr>
+                  <td>#ORD-8815</td>
+                  <td>Sarah Williams</td>
+                  <td>Range Rover Urus</td>
+                  <td>Sep 01 - Sep 03</td>
+                  <td>$1,700.00</td>
+                  <td><span class="status" style="background-color: #6c757d33; color: #adb5bd; border: 1px solid #6c757d; padding: 0.3rem 0.8rem; border-radius: 1rem; font-size: 0.8rem;">Completed</span></td>
+                  <td><button class="action-btn">Receipt</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="admin-content" id="admin-customers" style="display: none;">
+          <h2 style="margin-bottom: 1.5rem;">Customer Database & KYC</h2>
+          <div class="admin-table-wrapper">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Customer Name</th>
+                  <th>Email</th>
+                  <th>Phone Number</th>
+                  <th>KYC Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Jane Smith</td>
+                  <td>jane.smith@email.com</td>
+                  <td>+1 234 567 8901</td>
+                  <td><span class="status pending-status">Pending Verification</span></td>
+                  <td><button class="action-btn">Review ID</button></td>
+                </tr>
+                <tr>
+                  <td>Michael Johnson</td>
+                  <td>mjohnson@email.com</td>
+                  <td>+1 987 654 3210</td>
+                  <td><span class="status active-status">Verified</span></td>
+                  <td><button class="action-btn">View Profile</button></td>
+                </tr>
+                <tr>
+                  <td>David Clark</td>
+                  <td>d.clark@email.com</td>
+                  <td>+1 555 444 3333</td>
+                  <td><span class="status" style="background-color: #dc354533; color: #dc3545; border: 1px solid #dc3545; padding: 0.3rem 0.8rem; border-radius: 1rem; font-size: 0.8rem;">Rejected</span></td>
+                  <td><button class="action-btn">Review ID</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+    </div>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html>
