@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const allCars = require('../models/allCars.json');
+const allCars = require('../models/allCars.json') || [];
 const defaultRegion = "New York, Usa"
 router.get("/", (req, res) => {
     let userRegion = req.query.region;
@@ -33,7 +33,7 @@ router.get('/all', (req, res) => {
 })
 router.get("/:id",(req,res) => {
     const carId = req.params.id;
-    const car = allCars.find(car => car.id === carId);
+    const car = allCars.find(car => car.id === parseInt(carId));
     if(!car) {
         return res.status(404).json({msg: "Car not found"})
     }
