@@ -18,6 +18,7 @@ const cors = require("cors")
 app.use(express.json())
 app.use(cors(corsOption ))
 app.use(require("cookie-parser")())
+app.use(express.urlencoded({extended:false}))
 
 app.use("/api/cars",require("./routes/cars"))
 app.use("/api/users",require("./routes/users"))
