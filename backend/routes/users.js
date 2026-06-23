@@ -4,54 +4,10 @@ const {verifyAccessToken}= require("../middleware/verifyJWT")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 const {rolesList} = require("../middleware/roles_list")
-const allUsers = {
-    users: require("../models/allUsers.json") || [],
-    setUsers: (value)=>{
-        this.users = value
-    }
+const { signup } = require('../controllers/authController');
+const { registerValidation } = require('../middleware/authValidation');
 
-}
-const fsPromises = require("fs").promises
-const path = require("path");
-const { rolesList } = require('../middleware/roles_list');
-router.post("/register",async (req,res)=>{
-    const {firstName,lastName,userName,email,country,state,password} = req.body;
-    if(!firstName || !lastName || !userName || !email || !country || !state || !password) {
-        return res.status(400).json({msg:"All fields are required"})
-    }
-    const existingUser = users.find(user => user.email === email);
-    if(existingUser) {
-        return res.status(400).json({msg:"User already exists"})
-    }
-    const hashedPassword = await bcrypt.hash(password,10);
-    const roles = Object.values(user.roles)
-        const refreshToken = jwt.sign({userID: existingUser.id}, process.env.REFRESH_TOKEN, {expiresIn: "7d"});
-    const accessToken = jwt.sign({userID: existingUser.id,roles:roles}, process.env.ACCESS_TOKEN, {expiresIn: "10m"});
-    res.cookie("refreshToken", refreshToken, {
-        httpOnly: true,
-        secure: true,
-        sameSite: "none",
-        maxAge: 3 * 24 *60 * 60 * 1000
-    });
-    const newUser = {
-        id: users.length + 1,
-        firstName,
-        lastName,
-        userName,
-        email,
-        country,
-        state,
-        roles: {
-            users: rolesList.users
-        },
-        password:hashedPassword,
-        refreshToken:refreshToken
-    }
-    
-    allUsers.setUsers([...allUsers.users,newUser]);
-    await fsPromises.writeFile(path.join(__dirname, "../models/allUsers.json"),JSON.stringify(allUsers.users));
-    res.status(200).json(accessToken)
-})
+router.post("/register",registerValidation, signup);
 
 router.post("/login",async (req,res)=>{
     const {email,password} = req.body;
