@@ -1,0 +1,52 @@
+Auth & Users (/api/auth and /api/users)
+This handles everything from getting customers into the system to letting admins verify their identities.
+
+POST /api/auth/signup: Creates a new User document in the database.
+
+POST /api/auth/login: Verifies credentials and sends back the Access and Refresh JWTs.
+
+POST /api/auth/refresh: Quietly issues a new Access Token when the short-lived one expires.
+
+GET /api/users/profile: (Protected) Fetches the logged-in user's profile data for their dashboard.
+
+
+PUT /api/users/profile: (Protected) Allows the user to update their info and upload their Driver's License for KYC.
+
+
+GET /api/users: (Admin Only) Fetches the list of everyone registered on the site for the admin dashboard.
+
+
+PUT /api/users/:id/verify: (Admin Only) Allows staff to manually change a user's verificationStatus to "Approved" or "Rejected".
+
+2. The Fleet / Cars (/api/cars)
+This manages your digital garage and feeds the frontend search results.
+
+GET /api/cars: (Public) Fetches the list of cars. This is where we will use req.query to handle dynamic filters like ?region=Lagos&type=SUV&maxPrice=50000.
+
+GET /api/cars/:id: (Public) Fetches the details of one specific car. This route will also run the MongoDB $aggregate function to calculate and return the average rating.
+
+POST /api/cars: (Admin Only) Adds a new vehicle to the database. We can design this to handle the bulk array upload for identical fleet cars.
+
+PUT /api/cars/:id: (Admin Only) Updates a car's details. Crucially, this is the route admins will use to toggle the operationalStatus to "In Maintenance" if a car gets damaged.
+
+DELETE /api/cars/:id: (Admin Only) Permanently removes a retired car from the fleet.
+
+3. Bookings (/api/bookings)
+The operational bridge handling reservations and date blocking.
+
+
+POST /api/bookings: (Protected) Creates a new reservation, calculates the total price, and sets the paymentStatus to "Deposit Paid".
+
+GET /api/bookings/my-bookings: (Protected) Fetches only the bookings belonging to the currently logged-in user for their dashboard.
+
+
+GET /api/bookings: (Admin Only) Fetches the massive, filterable table of all platform bookings (Pending, Active, Completed, Cancelled) for the Admin panel.
+
+
+PUT /api/bookings/:id: (Admin Only) Allows admins to manually extend a user's rental dates or update the order status.
+
+4. Reviews (/api/reviews)
+Kept separate to prevent document bloat.
+
+
+POST /api/reviews: (Protected) Allows a user to submit a 1-5 star rating and comment. (We will likely add logic here to ensure they can only review a car they have actually rented!).
